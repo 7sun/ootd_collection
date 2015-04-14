@@ -51,10 +51,16 @@ RSpec.describe User, type: :model do
 
   it "should confirm that the password matches the password_confirmation" do
     user = build(:user)
-    user.password = "selmaandwang"
-    user.password_confirmation = "selmaandwang2"
+    user.password = "password123"
+    user.password_confirmation = "password456"
     expect(user.valid?).to eq(false)
     expect(user.errors.full_messages).to eq(["Password confirmation doesn't match Password"])
+  end
+
+  it "is invalid without a company" do
+    user = build(:user)
+    user.company = nil
+    expect(user).to be_invalid
   end
 
 
