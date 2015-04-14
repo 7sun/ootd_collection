@@ -41,5 +41,26 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Use Capybara for front-end testing
+  gem 'capybara'
+
+  #Use Rspec for unit testing
+  gem 'rspec-rails'
+
+  # Use Factory Girl for generating test data
+  gem 'factory_girl_rails', '~> 4.0'
+
+  # Use Faker for test data values
+  gem 'faker'
+
+  # User Pry for command line debugging
+  gem 'pry-rails'
+
 end
 
+group :production do
+  # User Rails 12Factor for hosting on Heroku
+  gem 'rails_12factor'
+
+end
