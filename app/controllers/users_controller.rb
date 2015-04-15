@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       if @user.save
-        session[:user_id] = user.id.to_s
+        session[:user_id] = @user.id.to_s
         flash[:info] = "Welcome to OOTD"
-        redirect_to root_path
+        redirect_to users_path
       end
     else
       # Need to add forget password function
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :company, :password, :password_confirmation)
   end
 
 
