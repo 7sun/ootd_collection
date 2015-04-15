@@ -1,10 +1,2 @@
 <h2>Add a new user</h2>
-<%= form_for @user do |f| %>
-	<%=	f.text_field :first_name, placeholder: 'First Name' %>
-	<%= f.text_field :last_name, placeholder: 'Last Name' %>
-	<%= f.text_field :email, placeholder: 'Email' %>
-	<%= f.text_field :company, placeholder: 'Company' %>
-	<%= f.password_field :password, placeholder: 'Password' %>
-	<%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
-	<%= f.submit 'Add New' %>		
-<% end %>
+<%= render 'form' %>
