@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
 
+  def new
+  end
+
   def create
-    user = User.find_by(email: params[:user][:email])
+    user = User.find_by(email: params[:email])
     # checks that user exists and password matches user's account
-    if user && user.authenticate(params[:user][:password])
+    if user && user.authenticate(params[:password])
       # shows user welcome message
       flash[:success] = 'Welcome back!'
       # Creates a session 'user_id' that matches the current user's id
