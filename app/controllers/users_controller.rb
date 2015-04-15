@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       if @user.save
-        flash[:info] = "#{user.fullname} added as new User"
+        flash[:info] = "#{@user.fullname} added as new User"
         redirect_to users_path
       end
     else
