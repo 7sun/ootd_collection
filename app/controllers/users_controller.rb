@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         redirect_to users_path
       end
     else
+      # Need to add flash message is user is missing fields
       flash[:error] = "This user has already been registered."
       render :new
     end
