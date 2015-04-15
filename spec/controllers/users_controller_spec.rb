@@ -55,7 +55,7 @@ RSpec.describe UsersController, type: :controller do
 
       it "redirects to index" do
         post :create, user: valid_attrs
-        expect( response).to redirect_to root_path
+        expect( response).to redirect_to users_path
       end
     end
 
