@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+  # index, new, createShould only be visible to admin. Need to update.
+
   def index
-    # Should only be visible to admin. Need to update.
     @users = User.all
   end
   
@@ -13,19 +14,24 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       if @user.save
-        session[:user_id] = @user.id.to_s
-        flash[:info] = "Welcome to OOTD"
+        flash[:info] = "#{user.fullname} added as new User"
         redirect_to users_path
       end
     else
-      # Need to add forget password function
-      flash[:error] = "This user has already been registered. Please login instead"
+      flash[:error] = "This user has already been registered."
       render :new
     end
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    # Need to add confirm dialog in markup: http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html
+    @user.destroy
+    redirect_to users_path
   end
 
 
