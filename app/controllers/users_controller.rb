@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  # index, new, createShould only be visible to admin. Need to update.
+  # index, new, create Should only be visible to admin. Need to update.
 
   def index
     @users = User.all
