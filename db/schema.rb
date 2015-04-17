@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150417223557) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "collection"
     t.string   "category"
     t.string   "style_num"
     t.string   "style"
@@ -48,9 +47,9 @@ ActiveRecord::Schema.define(version: 20150417223557) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "company"
-    t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

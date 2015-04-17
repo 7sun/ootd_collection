@@ -1,5 +1,6 @@
 <%= form_for @product do |f| %>
-	<%=	f.text_field :collection, placeholder: 'Collection' %>
+	<%= f.collection_select(:collection, Collection.all, :id, :season)%>
+	<br>
 	<%= f.select :category, [['Tops'],['Bottoms'],['Dresses']] %>
 	<%= f.text_field :style, placeholder: 'Style' %>
 	<%= f.text_field :style_num, placeholder: 'Style #' %>

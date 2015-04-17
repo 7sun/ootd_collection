@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :require_admin, only: [:update, :destroy]
+  skip_before_action :require_admin, only: [:index, :show]
 
   def index
     @products = Product.all
