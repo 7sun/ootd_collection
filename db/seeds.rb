@@ -18,6 +18,17 @@
   )
 end
 
+# Create Admin User
+User.create(
+first_name: 'Peter', 
+last_name: 'Krouse',
+email: 'peter@me.com',
+company: 'Loops Unlimited',
+password: "admin",
+password_confirmation: "admin",
+admin: true
+)
+
 Product.create(
   collection: 'Fall 2015',
   category: 'Tops',

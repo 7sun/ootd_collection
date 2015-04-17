@@ -1,7 +1,6 @@
 class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
-      t.string :collection
       t.string :category
       t.string :style_num
       t.string :style
