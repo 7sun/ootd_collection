@@ -29,8 +29,34 @@ password_confirmation: "admin",
 admin: true
 )
 
+# Create Collections
+Collection.create(
+  year: 2015,
+  season: 'Summer'
+  )
+
+Collection.create(
+  year: 2015,
+  season: 'Fall'
+  )
+
+Collection.create(
+  year: 2015,
+  season: 'Winter'
+  )
+
+Collection.create(
+  year: 2016,
+  season: 'Spring'
+  )
+
+Collection.create(
+  year: 2016,
+  season: 'Summer'
+  )
+
+# Create Prodcuts
 Product.create(
-  collection: 'Fall 2015',
   category: 'Tops',
   style: 'Fancy Top',
   style_num: 'D53#21',
@@ -39,7 +65,6 @@ Product.create(
   )
 
 Product.create(
-  collection: 'Fall 2015',
   category: 'Pants',
   style: 'Classic Pants',
   style_num: 'D56#21',
@@ -48,7 +73,6 @@ Product.create(
   )
 
 Product.create(
-  collection: 'Fall 2015',
   category: 'Pants',
   style: 'Modern Pants',
   style_num: 'D56#21',
@@ -57,7 +81,6 @@ Product.create(
   )
 
 Product.create(
-  collection: 'Fall 2015',
   category: 'Skirts',
   style: 'Summer Skirt',
   style_num: 'D53#14',
@@ -66,7 +89,6 @@ Product.create(
   )
 
 Product.create(
-  collection: 'Fall 2015',
   category: 'Skirts',
   style: 'Short Skirt',
   style_num: 'D53#14',
@@ -75,7 +97,6 @@ Product.create(
   )
 
 Product.create(
-  collection: 'Fall 2015',
   category: 'Dresses',
   style: 'Floral Dress',
   style_num: 'D53#31',
