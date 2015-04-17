@@ -1,3 +1,7 @@
 <h2>Products</h2>
-<%= link_to "Add New", new_product_path %>
+	<% if current_user.is_admin? %>
+		<%= link_to "Add New", new_product_path %>
+	<% end %>
+<% end %>
+
 <%= render 'list' %>
