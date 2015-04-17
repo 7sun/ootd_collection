@@ -1,2 +1,7 @@
-<h1>OOTD Collection</h1>
-<%= link_to "Users", users_path %>
+<% if current_user %>
+	<% if current_user.is_admin? %>
+		<%= link_to "Users", users_path %>
+	<% end %>
+<% end %>
+
+<%= link_to "Products", products_path %>

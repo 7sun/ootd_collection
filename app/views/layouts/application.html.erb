@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1><%= link_to 'OOTD Collection', root_path %></h1>
+
 <div id="auth-links">
 	<% if current_user %>
 		<%= current_user.email %> | <%= link_to 'Logout', logout_path %>

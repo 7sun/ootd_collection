@@ -3,6 +3,10 @@ input {
 	margin-bottom: 1em;
 }
 
+h1 {
+	display: inline;
+}
+
 #auth-links {
 	float: right;
 }

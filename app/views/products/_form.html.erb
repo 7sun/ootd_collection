@@ -1,0 +1,9 @@
+<%= form_for @product do |f| %>
+	<%=	f.text_field :collection, placeholder: 'Collection' %>
+	<%= f.select :category, [['Tops'],['Bottoms'],['Dresses']] %>
+	<%= f.text_field :style, placeholder: 'Style' %>
+	<%= f.text_field :style_num, placeholder: 'Style #' %>
+	<%= f.text_field :color, placeholder: 'Color' %>
+	<%= f.text_field :description, placeholder: 'Description' %>
+	<%= f.submit 'Submit' %>
+<% end %>
