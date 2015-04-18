@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # get '/dresses'      => 'products#dresses', as: 'dresses'
   # get '/jackets'      => 'products#jackets', as: 'jackets'
   get '/collection'   => 'collections#index', as: 'collection'
+  get '/about'        => 'pages#about', as: 'about'
 
 
 end
