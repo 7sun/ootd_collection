@@ -1,8 +1,7 @@
 class CreateCollections < ActiveRecord::Migration
   def change
     create_table :collections do |t|
-      t.integer :year
-      t.string :season
+      t.string :name
 
       t.timestamps null: false
     end

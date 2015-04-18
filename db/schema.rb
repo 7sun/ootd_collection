@@ -17,29 +17,34 @@ ActiveRecord::Schema.define(version: 20150417223557) do
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
-    t.integer  "year"
-    t.string   "season"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "images", force: :cascade do |t|
+    t.integer  "product_id"
     t.string   "source"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
+  add_index "images", ["product_id"], name: "index_images_on_product_id", using: :btree
+
   create_table "products", force: :cascade do |t|
+    t.integer  "collection_id"
     t.string   "category"
     t.string   "style_num"
     t.string   "style"
     t.string   "color"
     t.string   "materials"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "products", ["collection_id"], name: "index_products_on_collection_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

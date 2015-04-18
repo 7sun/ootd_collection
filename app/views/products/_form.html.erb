@@ -1,7 +1,7 @@
 <%= form_for @product do |f| %>
-	<%= f.collection_select(:collection, Collection.all, :id, :season)%>
+	<%= f.collection_select(:collection_id, Collection.all, :id, :name )%>
 	<br>
-	<%= f.select :category, [['Tops'],['Bottoms'],['Dresses']] %>
+	<%= f.select :category, [['Tops'],['Pants'],['Skirts'],['Dresses'],['Jackets']] %>
 	<%= f.text_field :style, placeholder: 'Style' %>
 	<%= f.text_field :style_num, placeholder: 'Style #' %>
 	<%= f.text_field :color, placeholder: 'Color' %>

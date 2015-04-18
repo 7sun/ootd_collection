@@ -31,28 +31,23 @@ admin: true
 
 # Create Collections
 Collection.create(
-  year: 2015,
-  season: 'Summer'
+  name: 'Summer 2015'
   )
 
 Collection.create(
-  year: 2015,
-  season: 'Fall'
+  name: 'Fall 2015'
   )
 
 Collection.create(
-  year: 2015,
-  season: 'Winter'
+  name: 'Winter 2015'
   )
 
 Collection.create(
-  year: 2016,
-  season: 'Spring'
+  name: 'Spring 2016'
   )
 
 Collection.create(
-  year: 2016,
-  season: 'Summer'
+  name: 'Summer 2016'
   )
 
 # Create Prodcuts
