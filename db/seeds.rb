@@ -31,7 +31,8 @@ admin: true
 
 # Create Collections
 Collection.create(
-  name: 'Summer 2015'
+  name: 'Summer 2015',
+  current: true
   )
 
 Collection.create(
