@@ -1,6 +1,7 @@
 class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
+      t.references :collection, index: true
       t.string :category
       t.string :style_num
       t.string :style
