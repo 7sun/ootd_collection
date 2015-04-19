@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  skip_before_action :require_admin, only: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
 
   def index
     @products = Product.all
@@ -44,6 +44,9 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_path
   end
+
+
+  private
 
   def product_params
     params.require(:product).permit(:collection_id, :category, :style_num, :style, :color, :materials, :description)

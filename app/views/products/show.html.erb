@@ -1,5 +1,9 @@
 <h2><%= @product.style %></h2>
-<p><%= link_to 'Edit', edit_product_path %> | <%= link_to 'Delete', @product, method: :delete %></p>
+<% if current_user %>
+	<% if current_user.is_admin? %>
+		<p><%= link_to 'Edit', edit_product_path %> | <%= link_to 'Delete', @product, method: :delete %></p>		
+	<% end %>
+<% end %>
 <p><%=  @product.category %></p>
 <p><%=  @product.style_num %></p>
 <p><%=  @product.color %></p>
