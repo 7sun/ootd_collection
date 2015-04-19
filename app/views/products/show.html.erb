@@ -4,6 +4,8 @@
 		<p><%= link_to 'Edit', edit_product_path %> | <%= link_to 'Delete', @product, method: :delete %></p>		
 	<% end %>
 <% end %>
+
+<%= image_tag @product.images.first.source.small %>
 <p><%=  @product.category %></p>
 <p><%=  @product.style_num %></p>
 <p><%=  @product.color %></p>
