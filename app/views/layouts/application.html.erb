@@ -9,6 +9,12 @@
 </head>
 <body>
 <h1><%= link_to 'OOTD Collection', root_path %></h1>
+<% if current_user %>
+	<% if current_user.is_admin? %>
+		<%= link_to "Users", users_path %>
+		<%= link_to "Products", products_path %>
+	<% end %>
+<% end %>
 
 <div id="auth-links">
 	<% if current_user %>
