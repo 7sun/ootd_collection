@@ -24,6 +24,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Allows image storage with Amazon S3
+gem 'carrierwave'
+# required for Amazon S3 Image Storage
+gem 'fog'
+# for post-upload image processing
+gem 'mini_magick' 
+# For secure API Key storage
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
