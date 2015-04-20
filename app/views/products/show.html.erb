@@ -5,7 +5,9 @@
 	<% end %>
 <% end %>
 
-<%= image_tag @product.images.first.source.small %>
+<% if @product.images.empty? == false %>
+	<%= image_tag @product.images.first.source.small %>
+<% end %>
 <p><%=  @product.category %></p>
 <p><%=  @product.style_num %></p>
 <p><%=  @product.color %></p>
