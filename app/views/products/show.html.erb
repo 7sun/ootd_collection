@@ -6,7 +6,7 @@
 <% end %>
 
 <% if @product.images.empty? == false %>
-	<%= image_tag @product.images.first.source.small %>
+	<%= image_tag @product.images.first.source.medium %>
 <% end %>
 <p><%=  @product.category %></p>
 <p><%=  @product.style_num %></p>
