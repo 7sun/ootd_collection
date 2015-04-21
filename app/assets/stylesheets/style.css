@@ -10,3 +10,7 @@ h1 {
 #auth-links {
 	float: right;
 }
+
+.product {
+	float: left;
+}
