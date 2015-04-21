@@ -34,6 +34,8 @@ gem 'mini_magick'
 gem 'figaro'
 # Adds angular
 gem 'angularjs-rails'
+# Adds Serializer to control JSON structure
+gem 'active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
