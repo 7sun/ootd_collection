@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, :products
   resources :stockists, except: :show
   
-  root 'pages#index'
+  root 'home#index'
   
   get '/login'        => 'sessions#new', as: 'login'
   post '/login'       => 'sessions#create'
