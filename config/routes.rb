@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :api do
+    resources :users
+    resources :products
+    resources :stockists
+    resources :collections
+  end
+
+
   resources :users, :products
   resources :stockists, except: :show
   
