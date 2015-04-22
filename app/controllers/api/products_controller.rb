@@ -45,6 +45,8 @@ module Api
 
       def product_params
         params.require(:product).permit(:collection_id, :category, :style_num, :style, :color, :materials, :description, images_attributes: [:id, :source, :description])
+      end
 
   end
 end
+

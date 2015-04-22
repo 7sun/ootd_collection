@@ -1,24 +1,26 @@
 angular
 	.module("ootd", ['ngResource'])
-	 .config(['$httpProvider', function($httpProvider) {
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+	.config(['$httpProvider', function($httpProvider) {
+  	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
   }])
   .controller("productController", ['$scope', '$http', '$resource', function($scope, $http, $resource){
-		var Product = $resource('/api/products/:id' {id:'@id'},
+		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
-				'update': { method: 'patch'}
+				'update': { method: 'patch'},
+				'query': { method: 'get', isArray: false}
 			}
 		);
 
 		Product.query(function(data){
-			$scope.products = data;
+			console.log('Fetched products!', 'Data', data);
+			$scope.products = data["products"];
 		});
 
 		$scope.createProduct = function(){
 			// Need to add attributes for collection and images
 			new Product({
-				collection_id: $scope.newProduct.collection_id
+				collection_id: $scope.newProduct.collection_id,
 				category: $scope.newProduct.category,
 				style_num: $scope.newProduct.style_num,
 				style: $scope.newProduct.style,
@@ -39,8 +41,8 @@ angular
 			$scope.product = Product.get({id: product.id}, function(product){
 				product.$delete();
 				$scope.products.splice(index, 1);
-			});
+			})
 		}
 
+	}]);
 
-  }

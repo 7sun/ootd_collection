@@ -1,9 +1,16 @@
-<nav>
-	<ul>
-		<li><%= link_to 'collection', collection_path %></li>
-		<li><%= link_to 'about', about_path %></li>
-		<li><%= link_to 'contact', contact_path %></li>
-		<li><%= link_to 'stockists', stockists_path %></li>
-		<li><%= link_to '#ootdcollection', 'https://instagram.com/ootd.collection/', target: '_blank' %></li>
-	</ul>
-</nav>
+<div ng-controller="productController">
+	<nav>
+		<ul>
+			<li><%= link_to 'collection', collection_path %></li>
+			<li><%= link_to 'about', about_path %></li>
+			<li><%= link_to 'contact', contact_path %></li>
+			<li><%= link_to 'stockists', stockists_path %></li>
+			<li><%= link_to '#ootdcollection', 'https://instagram.com/ootd.collection/', target: '_blank' %></li>
+		</ul>
+	</nav>
+
+	<div ng-repeat="product in products">
+		<h3>{{product.style}}</h3>
+		<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
+	</div>
+</div>
