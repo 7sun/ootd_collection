@@ -4,7 +4,7 @@ angular
   	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
   }])
-  .controller("productController", ['$scope', '$http', '$resource', function($scope, $http, $resource){
+  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
 		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
 				'update': { method: 'patch'},
@@ -15,7 +15,17 @@ angular
 		Product.query(function(data){
 			console.log('Fetched products!', 'Data', data);
 			$scope.products = data["products"];
+			$scope.productsArray = $scope.products;
+			$scope.topsArray = filterFilter($scope.products, 'tops');
+			$scope.pantsArray = filterFilter($scope.products, 'pants');
+			$scope.skirtsArray = filterFilter($scope.products, 'skirt');
+			$scope.dressesArray = filterFilter($scope.products, 'dresses');
+			$scope.jacketsArray = filterFilter($scope.products, 'jackets');
 		});
+
+
+
+		$scope.categoryFilter = {}
 
 		$scope.createProduct = function(){
 			// Need to add attributes for collection and images

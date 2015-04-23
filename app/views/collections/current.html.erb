@@ -3,18 +3,19 @@
 
 	<nav>
 		<ul>
-			<li>collection</li>
-			<li>tops</li>
-			<li>pants</li>
-			<li>skirts</li>
-			<li>dresses</li>
-			<li>jackets</li>
+			<li ng-click="products = productsArray">collection</li>
+			<li ng-click="products = topsArray">tops</li>
+			<li ng-click="products = pantsArray">pants</li>
+			<li ng-click="products = skirtsArray">skirts</li>
+			<li ng-click="products = dressesArray">dresses</li>
+			<li ng-click="products = jacketsArray">jackets</li>
 		</ul>
 	</nav>
 
 	<div class="product" ng-repeat="product in products">
 			<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
 			<h3>{{product.style}}</h3>
+			<p>{{product.category}}</p>
 	</div>
 
 </div>
