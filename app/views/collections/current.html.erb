@@ -1,0 +1,20 @@
+<div ng-controller="productController">
+	<h2>Summer 2015</h2>
+
+	<nav>
+		<ul>
+			<li>collection</li>
+			<li>tops</li>
+			<li>pants</li>
+			<li>skirts</li>
+			<li>dresses</li>
+			<li>jackets</li>
+		</ul>
+	</nav>
+
+	<div class="product" ng-repeat="product in products">
+			<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
+			<h3>{{product.style}}</h3>
+	</div>
+
+</div>

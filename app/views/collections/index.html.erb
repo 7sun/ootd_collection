@@ -1,9 +1,0 @@
-
-<div>
-	<h2>Summer 2015</h2>
-	<% @products.each do |product| %>
-		<h3><%= link_to product.style, product_path(product.id) %></h3>	
-		<p><%= product.style_num %></p>
-		<br>
-	<% end %>
-</div>

@@ -15,3 +15,4 @@
 //= require angular
 //= require angular-resource
 //= require ./ng-app/main
+//= require ./ng-app/productController

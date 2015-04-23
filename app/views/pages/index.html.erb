@@ -8,9 +8,3 @@
 			<li><%= link_to '#ootdcollection', 'https://instagram.com/ootd.collection/', target: '_blank' %></li>
 		</ul>
 	</nav>
-
-	<div ng-repeat="product in products">
-		<h3>{{product.style}}</h3>
-		<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
-	</div>
-</div>
