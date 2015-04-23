@@ -1,21 +1,25 @@
 <div ng-controller="productController">
 	<h2>Summer 2015</h2>
 
-	<nav>
-		<ul>
-			<li ng-click="products = productsArray">collection</li>
-			<li ng-click="products = topsArray">tops</li>
-			<li ng-click="products = pantsArray">pants</li>
-			<li ng-click="products = skirtsArray">skirts</li>
-			<li ng-click="products = dressesArray">dresses</li>
-			<li ng-click="products = jacketsArray">jackets</li>
-		</ul>
-	</nav>
-
-	<div class="product" ng-repeat="product in products">
-			<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
-			<h3>{{product.style}}</h3>
-			<p>{{product.category}}</p>
+	<div class="nav-col">
+		<nav>
+			<ul>
+				<li ng-click="products = productsArray">collection</li>
+				<li ng-click="products = topsArray">tops</li>
+				<li ng-click="products = pantsArray">pants</li>
+				<li ng-click="products = skirtsArray">skirts</li>
+				<li ng-click="products = dressesArray">dresses</li>
+				<li ng-click="products = jacketsArray">jackets</li>
+			</ul>
+		</nav>
 	</div>
 
+	<div class="content-col">
+		<div class="product" ng-repeat="product in products">
+				<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
+				<h3>{{product.style}}</h3>
+				<p>{{product.style_num}}</p>
+		</div>
+	</div>
+	
 </div>

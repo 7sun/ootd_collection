@@ -1,3 +1,12 @@
+html {
+	background-color: #FDFDFD;
+	color: 010101;
+}
+
+body {
+	margin: 4em;
+}
+
 input {
 	display: block;
 	margin-bottom: 1em;
@@ -7,10 +16,40 @@ h1 {
 	display: inline;
 }
 
+ul {
+	margin: 0;
+  padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+.site-nav > ul > li {
+	display: inline;
+	margin-right: 20px;
+}
+
+.nav-col {
+	min-width: 15%;
+	float: left;
+}
+
+.content-col {
+	width: 85%;
+	float: left;
+}
+
 #auth-links {
 	float: right;
 }
 
 .product {
 	float: left;
+	text-align: center;
+}
+
+.product > img {
+	border: 1px solid #ABABAB;
+	margin: 1em 3em;
 }
