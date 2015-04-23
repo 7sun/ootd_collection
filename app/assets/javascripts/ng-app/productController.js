@@ -8,13 +8,15 @@ angular
 		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
 				'update': { method: 'patch'},
+				// Returned products are Objects
 				'query': { method: 'get', isArray: false}
 			}
 		);
-
+		// Fetches all Products from DB
 		Product.query(function(data){
 			console.log('Fetched products!', 'Data', data);
 			$scope.products = data["products"];
+			// Creates filtered arrays for each product category
 			$scope.productsArray = $scope.products;
 			$scope.topsArray = filterFilter($scope.products, 'tops');
 			$scope.pantsArray = filterFilter($scope.products, 'pants');
@@ -22,10 +24,6 @@ angular
 			$scope.dressesArray = filterFilter($scope.products, 'dresses');
 			$scope.jacketsArray = filterFilter($scope.products, 'jackets');
 		});
-
-
-
-		$scope.categoryFilter = {}
 
 		$scope.createProduct = function(){
 			// Need to add attributes for collection and images
