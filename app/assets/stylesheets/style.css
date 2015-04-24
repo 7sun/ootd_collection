@@ -1,6 +1,6 @@
 html {
 	background-color: #FDFDFD;
-	color: 010101;
+	color: #010101;
 }
 
 body {
@@ -51,9 +51,23 @@ li {
 .product {
 	float: left;
 	text-align: center;
+	height: 20em;
 }
 
-.product > img {
+.product > a > img {
 	border: 1px solid #ABABAB;
 	margin: 1em 3em;
+}
+
+p {
+	  margin: 0 0 1em;
+}
+
+a {
+	color: #010101;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ABABAB;
 }
