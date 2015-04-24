@@ -15,11 +15,11 @@
 	</div>
 
 	<div class="content-col">
-		<div class="product" ng-repeat="product in products">
+		<div class="product" ng-repeat="product in products" ng-animate=" 'animate' ">
 				<img ng-src="{{product.images[0].source.small.url}}" alt="product-image">
 				<h3>{{product.style}}</h3>
 				<p>{{product.style_num}}</p>
 		</div>
 	</div>
-	
+
 </div>

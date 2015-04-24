@@ -12,5 +12,6 @@
  *
  *= require normalize
  *= require style
+ *= require animations
  *= require_self
  */

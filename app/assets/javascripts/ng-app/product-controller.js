@@ -4,7 +4,7 @@ angular
   	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
   }])
-  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
+  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', '$animate', function(filterFilter, $scope, $http, $resource, $animate){
 		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
 				'update': { method: 'patch'},

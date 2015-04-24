@@ -25,6 +25,10 @@ li {
 	list-style-type: none;
 }
 
+.site-nav {
+	text-align: center;
+}
+
 .site-nav > ul > li {
 	display: inline;
 	margin-right: 20px;

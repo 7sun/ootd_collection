@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
-//= require ./ng-app/main
-//= require ./ng-app/productController
+//= require angular-animate
+//= require ./ng-app/app-module
+//= require ./ng-app/product-controller
