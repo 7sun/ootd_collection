@@ -20,3 +20,4 @@
 //= require_tree ../templates
 //= require ./ng-app/app-module
 //= require ./ng-app/products-controller
+//= require ./ng-app/show-product-controller

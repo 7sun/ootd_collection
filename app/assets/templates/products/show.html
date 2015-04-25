@@ -1,0 +1,7 @@
+<div ng-controller="showProductController">
+	<h1>SHOW me</h1>
+	<p>This is the product name: {{product.style}}</p>
+		<div class="image-group">
+		<img ng-repeat="image in productImages" ng-click="$parent.imgNum=$index" ng-src="{{image.source.small.url}}" alt="{{$index}}">
+	</div>
+</div>

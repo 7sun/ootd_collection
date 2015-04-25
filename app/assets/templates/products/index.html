@@ -18,8 +18,8 @@
 
 	<div class="content-col">
 		<div class="product" ng-repeat="product in products | filter: search" ng-animate=" 'animate' ">
-				<a ng-href="/products/{{product.id}}"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
-				<a ng-href="/products/{{product.id}}"><p>{{product.style}}</p></a>
+				<a ui-sref="showproduct({id: product.id })"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
+				<a ui-sref="showproduct({id: product.id })"><p>{{product.style}}</p></a>
 				<p>{{product.style_num}}</p>
 		</div>
 	</div>

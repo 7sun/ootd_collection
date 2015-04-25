@@ -14,5 +14,10 @@ angular
     		templateUrl: "assets/products/index.html",
     		controller: "productsController"
     	})
+    	.state("showproduct", {
+    		url:"/products/:id",
+    		templateUrl: 'assets/products/show.html',
+    		controller: "showProductController"
+    	})
 
   }])
