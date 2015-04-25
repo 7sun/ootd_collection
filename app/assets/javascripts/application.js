@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
-//= require angular-resource
 //= require angular-animate
+//= require angular-resource
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require_tree ../templates
 //= require ./ng-app/app-module
-//= require ./ng-app/product-controller
+//= require ./ng-app/products-controller

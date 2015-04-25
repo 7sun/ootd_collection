@@ -1,10 +1,6 @@
 angular
 	.module("ootd")
-	.config(['$httpProvider', function($httpProvider) {
-  	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
-      $('meta[name=csrf-token]').attr('content');
-  }])
-  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
+  .controller("productsController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
 		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
 				'update': { method: 'patch'},
