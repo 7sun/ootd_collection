@@ -10,16 +10,17 @@
 				<li ng-click="products = skirtsArray">skirts</li>
 				<li ng-click="products = dressesArray">dresses</li>
 				<li ng-click="products = jacketsArray">jackets</li>
+				<li><input placeholder="search" type="text" ng-model="search"></li>
+				
 			</ul>
 		</nav>
 	</div>
 
 	<div class="content-col">
-		<div class="product" ng-repeat="product in products" ng-animate=" 'animate' ">
+		<div class="product" ng-repeat="product in products | filter: search" ng-animate=" 'animate' ">
 				<a ng-href="/products/{{product.id}}"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
 				<a ng-href="/products/{{product.id}}"><p>{{product.style}}</p></a>
 				<p>{{product.style_num}}</p>
-
 		</div>
 	</div>
 

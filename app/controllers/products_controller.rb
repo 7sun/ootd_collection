@@ -8,7 +8,10 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.images.build
+    # Builds three image inputs on new product page
+    3.times do
+      @product.images.build
+    end
   end
 
   def create

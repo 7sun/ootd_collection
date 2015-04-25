@@ -4,7 +4,7 @@ angular
   	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
   }])
-  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', '$animate', function(filterFilter, $scope, $http, $resource, $animate){
+  .controller("productController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
 		var Product = $resource('/api/products/:id', {id:'@id'},
 			{
 				'update': { method: 'patch'},
@@ -12,6 +12,12 @@ angular
 				'query': { method: 'get', isArray: false}
 			}
 		);
+
+		// Temporary image loading test for product page
+		Product.query(function(data){
+			$scope.productImages = data["products"][7]['images'];
+		});
+
 		// Fetches all Products from DB
 		Product.query(function(data){
 			console.log('Fetched products!', 'Data', data);
