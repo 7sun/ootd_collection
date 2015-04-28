@@ -11,11 +11,9 @@
 <body>
 
 <h1><%= link_to 'OOTD Collection', root_path %></h1>
-<a ui-sref="products">Products</a>
 <% if current_user %>
 	<% if current_user.is_admin? %>
-		<%= link_to "Users", users_path %>
-		<%= link_to "Products", products_path %>
+		<%= link_to "Admin", admin_root_path %>
 	<% end %>
 <% end %>
 

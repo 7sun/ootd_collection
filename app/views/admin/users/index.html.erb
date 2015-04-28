@@ -1,8 +1,8 @@
 <h2>List of Users</h2>
 <p><%= flash[:info] %></p>
-<%= link_to "Add New", new_user_path %>
+<%= link_to "Add New", new_admin_user_path %>
 <% @users.each do |user| %>
-	<h3><%= link_to user.fullname, user_path(user.id) %></h3>	
+	<h3><%= link_to user.fullname, admin_user_path(user.id) %></h3>	
 	<p><%= user.company %></p>
 	<p><%= mail_to user.email %></p>
 	<br>

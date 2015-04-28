@@ -1,6 +1,7 @@
-class ProductsController < ApplicationController
-
-  before_action :require_admin, except: [:index, :show]
+module Admin
+  class ProductsController < ApplicationController
+  
+  before_action :require_admin
 
   def index
     @products = Product.all
@@ -18,7 +19,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.valid?
       if @product.save
-        redirect_to products_path
+        redirect_to admin_products_path
       end
     else
       render :new
@@ -37,7 +38,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to products_path
+      redirect_to admin_products_path
     else
       render :edit
     end
@@ -47,7 +48,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     # Need to add confirm dialog in markup: http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html
     @product.destroy
-    redirect_to products_path
+    redirect_to admin_products_path
   end
 
 
@@ -57,4 +58,6 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:collection_id, :category, :style_num, :style, :color, :materials, :description, images_attributes: [:id, :source, :description])
   end
 
+
+  end
 end

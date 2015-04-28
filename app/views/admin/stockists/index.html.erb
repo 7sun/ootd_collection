@@ -1,0 +1,9 @@
+<h2>Stockists</h2>
+<%= link_to "Add New", new_admin_stockist_path %>
+<% @stockists.each do |stockist| %>
+	<h3><%= stockist.name %></h3>
+		<%= link_to "Edit", edit_admin_stockist_path(stockist.id) %> | <%= link_to 'Delete', { 
+				action: "destroy", id: stockist.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+	<p><%= link_to stockist.url, "http://#{stockist.url}", target: '_blank' %></p>
+	<br>
+<% end %>

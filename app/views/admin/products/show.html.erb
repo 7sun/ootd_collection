@@ -1,0 +1,21 @@
+<div>
+	<h2><%= @product.style %></h2>
+	<% if current_user %>
+		<% if current_user.is_admin? %>
+			<p><%= link_to 'Edit', edit_admin_product_path %> | <%= link_to 'Delete', { 
+				action: "destroy", id: @product.id }, method: :delete, data: { confirm: "Are you sure?" } %></p>		
+		<% end %>
+	<% end %>
+
+	<% if @product.images.empty? == false %>
+		<%= image_tag @product.images.first.source.medium %>
+	<% end %>
+	<p><%=  @product.category %></p>
+	<p><%=  @product.style_num %></p>
+	<p><%=  @product.color %></p>
+	<p><%=  @product.description %></p>
+
+	<%= link_to 'Back to Collection', admin_products_path %>
+
+
+</div>

@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :users
     resources :products
     resources :stockists
     resources :collections
   end
 
-  # resources :users, :products
-  # resources :stockists, except: :show
+  namespace :admin do
+    resources :users
+    resources :products
+    resources :stockists, except: :show
+    resources :collections
+    # get '/'      => 'pages#index', as: 'home'
+    root 'pages#index'
+  end
   
-  # root 'pages#index'
   root 'home#index'
   
   get '/login'        => 'sessions#new', as: 'login'

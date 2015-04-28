@@ -12,32 +12,32 @@ module Api
       render json: product
     end
 
-    def create
-      product = Product.new(product_params)
-      if product.save
-        render json: product
-      else
-        render json: {errors: product.errors}, status: 422
-      end
-    end
+    # def create
+    #   product = Product.new(product_params)
+    #   if product.save
+    #     render json: product
+    #   else
+    #     render json: {errors: product.errors}, status: 422
+    #   end
+    # end
 
-    def update
-      product = Product.find(params[:id])
-      if product.update(product_params)
-        render json: product
-      else
-        render json: {errors: product.errors}, status: 422
-      end
-    end
+    # def update
+    #   product = Product.find(params[:id])
+    #   if product.update(product_params)
+    #     render json: product
+    #   else
+    #     render json: {errors: product.errors}, status: 422
+    #   end
+    # end
 
-    def destroy
-      product = Product.find(params[:id])
-      if product.destroy
-        render status: 200
-      else
-        render status: 400
-      end
-    end
+    # def destroy
+    #   product = Product.find(params[:id])
+    #   if product.destroy
+    #     render status: 200
+    #   else
+    #     render status: 400
+    #   end
+    # end
 
 
 

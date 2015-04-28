@@ -1,6 +1,7 @@
-class StockistsController < ApplicationController
+module Admin
+  class StockistsController < ApplicationController
 
-  before_action :require_admin, except: :index
+  before_action :require_admin
 
   def index
     @stockists = Stockist.all
@@ -14,7 +15,7 @@ class StockistsController < ApplicationController
     @stockist = Stockist.new(stockist_params)
     if @stockist.valid?
       if @stockist.save
-        redirect_to stockists_path
+        redirect_to admin_stockists_path
       end
     else
       render :new
@@ -28,7 +29,7 @@ class StockistsController < ApplicationController
   def update
     @stockist = Stockist.find(params[:id])
     if @stockist.update(stockist_params)
-      redirect_to stockists_path
+      redirect_to admin_stockists_path
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class StockistsController < ApplicationController
     @stockist = Stockist.find(params[:id])
     # Need to add confirm dialog in markup: http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html
     @stockist.destroy
-    redirect_to stockists_path
+    redirect_to admin_stockists_path
   end
 
 
@@ -48,4 +49,5 @@ class StockistsController < ApplicationController
     params.require(:stockist).permit(:name, :url)
   end
 
+end
 end

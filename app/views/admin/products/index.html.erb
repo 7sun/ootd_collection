@@ -1,0 +1,9 @@
+<h2>Products</h2>
+<%= link_to "Add New", new_admin_product_path %>
+<% @products.each do |product| %>
+	<div class="product">
+		<%= image_tag product.images.first.source.small %>
+		<h3><%= link_to product.style, admin_product_path(product.id) %></h3>	
+		<p><%= product.style_num %></p>
+	</div>
+<% end %>
