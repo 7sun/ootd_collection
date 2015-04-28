@@ -7,8 +7,21 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		template: "<h1>Sweet like bear meat</h1>"
+    		templateUrl: "assets/pages/index.html"
     	})
+        .state("contact", {
+            url: "/contact",
+            templateUrl: "assets/pages/contact.html"
+        })
+        .state("about", {
+            url: "/about",
+            templateUrl: "assets/pages/about.html"
+        })
+        .state("stockists", {
+            url:"/stockists",
+            templateUrl: "assets/stockists/index.html",
+            controller: "stockistsController"
+        })
     	.state("products", {
     		url:"/products",
     		templateUrl: "assets/products/index.html",

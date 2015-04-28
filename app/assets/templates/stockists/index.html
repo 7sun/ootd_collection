@@ -1,0 +1,8 @@
+	<div class="content-col">
+		<div class="stockist" ng-repeat="stockist in stockists">
+				<a ui-sref="showproduct({id: product.id })"></a>
+				<a ui-sref="showproduct({id: product.id })"><p>{{product.style}}</p></a>
+				<p>{{stockist.name}}</p>
+				<a ng-href="http://{{stockist.url}}" target="_blank">{{stockist.url}}</a>
+		</div>
+	</div>

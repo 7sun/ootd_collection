@@ -9,11 +9,6 @@ angular
 			}
 		);
 
-		// Temporary image loading test for product page
-		Product.query(function(data){
-			$scope.productImages = data["products"][7]['images'];
-		});
-
 		// Fetches all Products from DB
 		Product.query(function(data){
 			console.log('Fetched products!', 'Data', data);
