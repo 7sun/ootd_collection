@@ -5,6 +5,7 @@
 	<%= f.text_field :style, placeholder: 'Style' %>
 	<%= f.text_field :style_num, placeholder: 'Style #' %>
 	<%= f.text_field :color, placeholder: 'Color' %>
+	<%= f.text_field :materials, placeholder: 'Materials' %>
 	<%= f.text_field :description, placeholder: 'Description' %>
 	<%= f.fields_for :images do |image| %>
 		<%= image.file_field :source %>

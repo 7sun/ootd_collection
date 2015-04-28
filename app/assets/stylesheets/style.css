@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	margin: 4em;
+	margin: 4em 14em;
 }
 
 input {
@@ -60,7 +60,7 @@ li {
 }
 
 p {
-	  margin: 0 0 1em;
+	margin: 0 0 1em;
 }
 
 a {
@@ -70,4 +70,22 @@ a {
 
 a:hover {
 	color: #ABABAB;
+}
+
+.product-hero {
+	display: block;
+}
+
+.image-group {
+	padding-top: 2em;
+}
+
+.product-text {
+	float: left;
+	width: 420px;
+	height: 700px;
+}
+
+.materials {
+	list-style: square;
 }
