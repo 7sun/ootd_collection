@@ -32,6 +32,8 @@ gem 'angularjs-rails'
 gem 'angular-rails-templates'
 # Adds Serializer to control JSON structure
 gem 'active_model_serializers'
+# Adds sweet vector icons
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
