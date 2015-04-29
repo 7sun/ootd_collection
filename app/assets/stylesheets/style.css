@@ -54,8 +54,11 @@ li {
 	height: 20em;
 }
 
-.product > a > img {
+img {
 	border: 1px solid #ABABAB;
+}
+
+.product > a > img {
 	margin: 1em 3em;
 }
 
@@ -84,6 +87,15 @@ a:hover {
 	float: left;
 	width: 420px;
 	height: 700px;
+}
+
+.product-thumbs {
+	height: 160px;
+	margin-right: 38px;
+}
+
+.product-thumbs:last-child {
+	margin: 0;
 }
 
 .materials {

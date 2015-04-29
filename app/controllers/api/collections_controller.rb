@@ -1,5 +1,6 @@
 module Api
   class CollectionsController < ApplicationController
+    protect_from_forgery with: :null_session
 
     def current
       collection = Collection.find_by(current: true)
