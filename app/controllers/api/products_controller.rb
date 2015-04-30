@@ -5,10 +5,17 @@ module Api
     def index
       products = Product.all
       render json: products
+      # if current_user
+      #   favorites = current_user.favorites.includes(:product)
+      #   render json: favorites, include: :product
+      # else
+      #   render json: {}
+      # end
     end
 
     def show
       product = Product.find(params[:id])
+      # favorited_users = product.favorited_users
       render json: product
     end
 

@@ -3,5 +3,5 @@ class ProductSerializer < ActiveModel::Serializer
 
   has_one :collection
   has_many :images
-  # accepts_nested_attributes_for :images
+  has_many :favorites
 end
