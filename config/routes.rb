@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :stockists
     resources :collections
     resources :favorites
+    resources :users, only: :show
   end
 
   namespace :admin do
