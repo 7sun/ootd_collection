@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :products
     resources :stockists
     resources :collections
+    resources :favorites
   end
 
   namespace :admin do

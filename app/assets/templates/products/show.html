@@ -1,6 +1,6 @@
-<div ng-controller="showProductController">
+<div>
 	<div class="product-text">
-		<h2>{{product.style}} <i class="fa fa-heart-o"></i></h2>
+		<h2>{{product.style}} <i ng-click="createFavorite()" class="fa fa-heart-o"></i></h2>
 		<h3>{{product.style_num}}</h3>
 		<p>{{product.description}}</p>
 		<li class="materials">{{product.materials}}</li>
