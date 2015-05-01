@@ -11,8 +11,10 @@ module Api
       if current_user
         favorite = Favorite.create(favorite_params)
         favorite.user = current_user
-        if favorite.save
-          render json: favorite
+        if favorite.valid?
+          if favorite.save
+            render json: favorite
+          end
         else
           render json: {errors: favorite.errors}
         end
@@ -24,10 +26,15 @@ module Api
     def destroy
       favorite = Favorite.find(params[:id])
       if favorite.destroy
-        render status: 200
+        render json: {status: 200}
       else
-        render status: 400
+        render json: {status: 400}
       end
+    end
+
+    def show
+      favorite = Favorite.find(params[:id])
+      render json: favorite
     end
 
   private

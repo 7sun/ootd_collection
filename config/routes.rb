@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :stockists
     resources :collections
     resources :favorites
-    resources :users, only: :show
+    get '/currentuser' => 'users#currentuser'
   end
 
   namespace :admin do

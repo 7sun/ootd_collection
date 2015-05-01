@@ -1,10 +1,12 @@
 <div>
 	<div class="product-text">
-		<h2>{{product.style}} <i ng-click="createFavorite()" class="fa fa-heart-o"></i></h2>
+		<h2>{{product.style}} <i ng-click="toggleFavorite()" class="heart fa fa-heart-o"></i></h2>
 		<h3>{{product.style_num}}</h3>
 		<p>{{product.description}}</p>
 		<li class="materials">{{product.materials}}</li>
-		<p>{{product.favorites}}</p>
+		<p>favorites: {{product.favorites}}</p>
+		<p>user: {{currentUser.id}}</p>
+		<div ng-if=""></div>
 	</div>
 	<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">
 	<div class="image-group">
