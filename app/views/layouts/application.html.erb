@@ -2,7 +2,6 @@
 <html ng-app="ootd">
 <head>
   <title>OOTD Collection</title>
-  <!-- <base href="/"> -->
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= favicon_link_tag 'favicon.ico' %>
@@ -12,6 +11,7 @@
 
 <h1><%= link_to 'OOTD Collection', root_path %></h1>
 <% if current_user %>
+	<a ui-sref="userfavorites">Favorites</a>
 	<% if current_user.is_admin? %>
 		<%= link_to "Admin", admin_root_path %>
 	<% end %>
@@ -24,7 +24,6 @@
 		<%= link_to 'Login', login_path %>
 	<% end %>
 </div>
-
 
 <%= yield %>
 
