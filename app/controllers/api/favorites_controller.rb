@@ -3,14 +3,15 @@ module Api
 
     def index
       if current_user
-        # user_favorites = Favorite.where(user: current_user)
-        # user_favorites = Product.includes(:favorites)
-        # user_favorites = Favorite.includes(:product).where(user: current_user)
-        user_favorites = current_user.favorites.includes(:product)
+        user_favorites = current_user.favorites.includes(:product).order('updated_at desc')
+        fav_products = []
         user_favorites.each do |f|
-          puts f.product.style
+          fav_products << f.product
         end
-        render json: user_favorites, include: :product
+        # render json: user_favorites, include: :product
+        render json: fav_products, except: :favorites
+      else
+        render json: {}
       end
     end
 
