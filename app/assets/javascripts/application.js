@@ -18,9 +18,4 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require_tree ../templates
-//= require ./ng-app/app-module
-//= require ./ng-app/users-factory
-//= require ./ng-app/products-controller
-//= require ./ng-app/show-product-controller
-//= require ./ng-app/stockists-controller
-//= require ./ng-app/favorites-controller
+//= require_tree ./ng-app/

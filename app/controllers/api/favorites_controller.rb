@@ -9,7 +9,7 @@ module Api
           fav_products << f.product
         end
         # render json: user_favorites, include: :product
-        render json: fav_products, except: :favorites
+        render json: fav_products
       else
         render json: {}
       end

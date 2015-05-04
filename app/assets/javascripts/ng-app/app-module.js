@@ -7,14 +7,13 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		templateUrl: "assets/pages/index.html"
-            // ,
-            // resolve: {
-            //     currentUser: function(UsersFactory) {
-            //         return UsersFactory.getUser();
-            //     }
-            // }
-            // Inject "currentUser" into the controller for access
+    		templateUrl: "assets/pages/index.html",
+            controller: "homeController",
+            resolve: {
+                currentUser: function(usersFactory) {
+                    return usersFactory.getUser();
+                }
+            }
     	})
         .state("contact", {
             url: "/contact",

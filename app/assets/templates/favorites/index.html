@@ -1,5 +1,5 @@
-<h2>User Favorites</h2>
-<div ng-repeat="fav in favProducts">	
+<h2>My Favorites</h2>
+<div class="fav-squares" ng-repeat="fav in favProducts">	
 	<img class="product-med" ng-src="{{fav.images[0].source.small.url}}" alt="">
-	<p>{{fav.style}}</p>
+	<p>{{fav.style_num}}</p>
 </div>

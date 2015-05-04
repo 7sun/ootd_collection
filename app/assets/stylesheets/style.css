@@ -35,7 +35,7 @@ li {
 }
 
 .nav-col {
-	min-width: 15%;
+	max-width: 15%;
 	float: left;
 }
 
@@ -104,4 +104,9 @@ a:hover {
 
 .fa-heart {
 	color: red;
+}
+
+.fav-squares {
+	float: left;
+	margin: 1em 3em;
 }
