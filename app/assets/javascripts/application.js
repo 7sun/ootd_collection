@@ -23,3 +23,4 @@
 //= require ./ng-app/products-controller
 //= require ./ng-app/show-product-controller
 //= require ./ng-app/stockists-controller
+//= require ./ng-app/favorites-controller

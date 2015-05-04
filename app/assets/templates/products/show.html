@@ -4,9 +4,6 @@
 		<h3>{{product.style_num}}</h3>
 		<p>{{product.description}}</p>
 		<li class="materials">{{product.materials}}</li>
-		<p>favorites: {{product.favorites}}</p>
-		<p>user: {{currentUser.id}}</p>
-		<div ng-if=""></div>
 	</div>
 	<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">
 	<div class="image-group">

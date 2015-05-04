@@ -1,6 +1,6 @@
 angular
 	.module("ootd")
-  .controller("showProductController", ['usersFactory', 'filterFilter', '$scope', '$http', '$resource', '$stateParams', function(usersFactory, filterFilter, $scope, $http, $resource, $stateParams){
+  .controller("showProductController", ['usersFactory', '$scope', '$http', '$resource', '$stateParams', function(usersFactory, $scope, $http, $resource, $stateParams){
 	  var Product = $resource('api/products/:id', {id:'@id'});
 	  var Favorite = $resource('api/favorites/:id', {id:'@id'});
 	  var userFavorited;

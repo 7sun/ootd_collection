@@ -2,9 +2,16 @@ module Api
   class FavoritesController < ApplicationController
 
     def index
-      # favorites = Favorite.includes(:user, :product).order('updated_at desc')
-      favorites = Favorite.all
-      render json: favorites
+      if current_user
+        # user_favorites = Favorite.where(user: current_user)
+        # user_favorites = Product.includes(:favorites)
+        # user_favorites = Favorite.includes(:product).where(user: current_user)
+        user_favorites = current_user.favorites.includes(:product)
+        user_favorites.each do |f|
+          puts f.product.style
+        end
+        render json: user_favorites, include: :product
+      end
     end
 
     def create
@@ -40,7 +47,7 @@ module Api
   private
 
     def favorite_params
-      params.permit(:user_id, :product_id)
+      params.require(:favorite).permit(:user_id, :product_id)
     end
 
   end

@@ -39,5 +39,10 @@ angular
     		templateUrl: 'assets/products/show.html',
     		controller: "showProductController"
     	})
+        .state("userfavorites", {
+            url: "/favorites",
+            templateUrl: 'assets/favorites/index.html',
+            controller: "favoritesController"
+        })
 
   }])
