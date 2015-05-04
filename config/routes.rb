@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :products
     resources :stockists, except: :show
     resources :collections
+    get '/favorites' => 'favorites#index'
     # get '/'      => 'pages#index', as: 'home'
     root 'pages#index'
   end

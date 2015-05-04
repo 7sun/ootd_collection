@@ -1,0 +1,13 @@
+<h2>Most Popular</h2>
+
+<% @sorted.each do |p| %>
+	<p><%= p.style_num %>: <%= p.favorites.count %></p>
+	<p>Favorited by:
+	<% names = [] %>
+	<% p.favorites.each do |f| %>
+		<% names << f.user.fullname %>
+	<% end %>
+	<em><%= names.join(", ") %></em>
+	</p>
+	<br>
+<% end %>

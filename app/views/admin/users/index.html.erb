@@ -5,6 +5,12 @@
 	<h3><%= link_to user.fullname, admin_user_path(user.id) %></h3>	
 	<p><%= user.company %></p>
 	<p><%= mail_to user.email %></p>
+	<p>favorites:
+		<% user.favorites.each do |f| %>
+			<%= f.product.style_num %>
+		<% end %>
+	</p>
+
 	<br>
 <% end %>
 
