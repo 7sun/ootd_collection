@@ -11,7 +11,10 @@ angular
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
-                    return usersFactory.getUser();
+                    return usersFactory.getUser()
+                    .then(function(object){
+                        return object.data;
+                    })
                 }
             }
     	})
@@ -31,12 +34,34 @@ angular
     	.state("products", {
     		url:"/products",
     		templateUrl: "assets/products/index.html",
-    		controller: "productsController"
+    		controller: "productsController",
+            resolve: {
+                allProducts: function(productsFactory) {
+                    return productsFactory.getAllProducts()
+                    .then(function(object){
+                        return object.data.products;
+                    })
+                }
+            }
     	})
     	.state("showproduct", {
     		url:"/products/:id",
     		templateUrl: 'assets/products/show.html',
-    		controller: "showProductController"
+    		controller: "showProductController",
+            resolve: {
+                currentUser: function(usersFactory) {
+                    return usersFactory.getUser()
+                    .then(function(object){
+                        return object.data;
+                    })
+                },
+                showProduct: function(productsFactory, $stateParams) {
+                    return productsFactory.getProduct($stateParams.id)
+                    .then(function(object){
+                        return object.data.product;
+                    })
+                }
+            }
     	})
         .state("userfavorites", {
             url: "/favorites",

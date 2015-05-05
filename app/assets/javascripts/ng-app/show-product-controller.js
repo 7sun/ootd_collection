@@ -1,23 +1,13 @@
 angular
 	.module("ootd")
-  .controller("showProductController", ['usersFactory', '$scope', '$http', '$resource', '$stateParams', function(usersFactory, $scope, $http, $resource, $stateParams){
-	  var Product = $resource('api/products/:id', {id:'@id'});
+  .controller("showProductController", ['currentUser', 'showProduct', '$scope', '$http', '$resource', '$stateParams', function(currentUser, showProduct, $scope, $http, $resource, $stateParams){
+
 	  var Favorite = $resource('api/favorites/:id', {id:'@id'});
 	  var userFavorited;
-	  $scope.product;
+	  $scope.currentUser = currentUser;
+	  $scope.product = showProduct;
+	  $scope.productImages = showProduct.images;
 
-	  // Gets current product and array of product images
-	  Product.get({id: $stateParams.id}, function(data){
-	  	$scope.product = data['product'];
-	  	$scope.productImages = data['product']['images'];
-	  });
-
-	  // Gets current user then checks if user has favorited the current product
-    usersFactory.getUser()
-      .success(function (data) {
-          $scope.currentUser = data;
-          checkForFavorite();
-      })
 
     // Called when the heart icon is clicked. 
 	  $scope.toggleFavorite = function(){
@@ -58,7 +48,6 @@ angular
     // Check if user has favorited the current product
     var checkForFavorite = function(){
   		favs = $scope.product.favorites;
-  		console.log("favs: " + favs);
   		if(favs.length == 0) {
   			console.log("No favorites :(");
   			userFavorited = false;
@@ -81,7 +70,8 @@ angular
     	console.log("userfavorite?: " + userFavorited);
 	  }
 
-
+	  // Calls checkForFavorite when page loads to determine if heart icon should be filled
+	  checkForFavorite();
 
 
 }]);

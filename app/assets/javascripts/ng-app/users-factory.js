@@ -3,7 +3,7 @@ angular
 	.factory("usersFactory", ['$http', function($http){
 		var currentUser = {};
 		var url = '/api/currentuser';
-		currentUser.getUser = function(){
+		currentUser.getUser = function(id){
 			return $http.get(url);
 		}
 		return currentUser;

@@ -1,18 +1,9 @@
 angular
 	.module("ootd")
-  .controller("productsController", ['filterFilter', '$scope', '$http', '$resource', function(filterFilter, $scope, $http, $resource){
-		var Product = $resource('/api/products/:id', {id:'@id'},
-			{
-				'update': { method: 'patch'},
-				// Returned products are Objects
-				'query': { method: 'get', isArray: false}
-			}
-		);
+  .controller("productsController", ['allProducts', 'filterFilter', '$scope', function(allProducts, filterFilter, $scope){
 
-		// Fetches all Products from DB
-		Product.query(function(data){
-			console.log('Fetched products!', 'Data', data);
-			$scope.products = data["products"];
+			$scope.products = allProducts;
+			
 			// Creates filtered arrays for each product category
 			$scope.productsArray = $scope.products;
 			$scope.topsArray = filterFilter($scope.products, 'tops');
@@ -20,34 +11,6 @@ angular
 			$scope.skirtsArray = filterFilter($scope.products, 'skirt');
 			$scope.dressesArray = filterFilter($scope.products, 'dresses');
 			$scope.jacketsArray = filterFilter($scope.products, 'jackets');
-		});
-
-		$scope.createProduct = function(){
-			// Need to add attributes for collection and images
-			new Product({
-				collection_id: $scope.newProduct.collection_id,
-				category: $scope.newProduct.category,
-				style_num: $scope.newProduct.style_num,
-				style: $scope.newProduct.style,
-				color: $scope.newProduct.color,
-				materials: $scope.newProduct.materials,
-				description: $scope.newProduct.description
-			}).$save(function(data){
-				$scope.products.unshift(data);
-				$scope.newProduct = null
-			});
-		}
-
-		$scope.saveProduct = function(product) {
-			product.$update();
-		}
-
-		$scope.destroyProduct = function(product, index) {
-			$scope.product = Product.get({id: product.id}, function(product){
-				product.$delete();
-				$scope.products.splice(index, 1);
-			})
-		}
 
 	}]);
 
