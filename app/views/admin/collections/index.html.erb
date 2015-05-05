@@ -1,0 +1,5 @@
+<h2>Collections</h2>
+<% @collections.each do |c| %>
+	<p><%= c.name %></p>
+<% end %>
+<%= link_to 'Add New Collection', new_admin_collection_path %>
