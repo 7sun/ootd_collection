@@ -7,7 +7,7 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		templateUrl: "assets/pages/index.html",
+    		templateUrl: "pages/index.html", //removes assets/ from path for heroku
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -20,20 +20,20 @@ angular
     	})
         .state("contact", {
             url: "/contact",
-            templateUrl: "assets/pages/contact.html"
+            templateUrl: "pages/contact.html" //removes assets/ from path for heroku
         })
         .state("about", {
             url: "/about",
-            templateUrl: "assets/pages/about.html"
+            templateUrl: "pages/about.html" //removes assets/ from path for heroku
         })
         .state("stockists", {
             url:"/stockists",
-            templateUrl: "assets/stockists/index.html",
+            templateUrl: "stockists/index.html", //removes assets/ from path for heroku
             controller: "stockistsController"
         })
     	.state("products", {
     		url:"/products",
-    		templateUrl: "assets/products/index.html",
+    		templateUrl: "products/index.html", //removes assets/ from path for heroku
     		controller: "productsController",
             resolve: {
                 allProducts: function(productsFactory) {
@@ -52,7 +52,7 @@ angular
     	})
     	.state("showproduct", {
     		url:"/products/:id",
-    		templateUrl: 'assets/products/show.html',
+    		templateUrl: 'products/show.html', //removes assets/ from path for heroku
     		controller: "showProductController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -71,7 +71,7 @@ angular
     	})
         .state("userfavorites", {
             url: "/favorites",
-            templateUrl: 'assets/favorites/index.html',
+            templateUrl: 'favorites/index.html', //removes assets/ from path for heroku
             controller: "favoritesController"
         })
 
