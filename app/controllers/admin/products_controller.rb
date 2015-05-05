@@ -31,7 +31,6 @@ module Admin
 
     def edit
       @product = Product.find(params[:id])
-      @product.images.build
     end
 
     def update

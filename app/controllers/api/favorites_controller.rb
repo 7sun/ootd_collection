@@ -45,12 +45,12 @@ module Api
       render json: favorite
     end
 
-  private
+    private
 
-    def favorite_params
-      params.require(:favorite).permit(:user_id, :product_id)
+      def favorite_params
+        params.require(:favorite).permit(:user_id, :product_id)
+      end
+
     end
-
-  end
 
 end

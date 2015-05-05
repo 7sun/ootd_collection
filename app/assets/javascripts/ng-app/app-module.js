@@ -41,6 +41,12 @@ angular
                     .then(function(object){
                         return object.data.products;
                     })
+                },
+                currentUser: function(usersFactory) {
+                    return usersFactory.getUser()
+                    .then(function(object){
+                        return object.data;
+                    })
                 }
             }
     	})
