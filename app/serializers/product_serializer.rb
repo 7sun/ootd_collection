@@ -4,4 +4,5 @@ class ProductSerializer < ActiveModel::Serializer
   has_one :collection
   has_many :images
   has_many :favorites
+  has_many :favorited_users, through: :favorites, source: :user
 end
