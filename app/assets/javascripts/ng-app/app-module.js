@@ -7,7 +7,7 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		templateUrl: "assets/pages/index.html", //removes assets/ from path for heroku
+    		templateUrl: "templates/pages/index.html", //removes assets/ from path for heroku
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -20,20 +20,20 @@ angular
     	})
         .state("contact", {
             url: "/contact",
-            templateUrl: "assets/templates/pages/contact.html" //removes assets/templates/ from path for heroku
+            templateUrl: "templates/pages/contact.html" //removes templates/ from path for heroku
         })
         .state("about", {
             url: "/about",
-            templateUrl: "assets/templates/pages/about.html" //removes assets/templates/ from path for heroku
+            templateUrl: "templates/pages/about.html" //removes templates/ from path for heroku
         })
         .state("stockists", {
             url:"/stockists",
-            templateUrl: "assets/templates/stockists/index.html", //removes assets/templates/ from path for heroku
+            templateUrl: "templates/stockists/index.html", //removes templates/ from path for heroku
             controller: "stockistsController"
         })
     	.state("products", {
     		url:"/products",
-    		templateUrl: "assets/templates/products/index.html", //removes assets/templates/ from path for heroku
+    		templateUrl: "templates/products/index.html", //removes templates/ from path for heroku
     		controller: "productsController",
             resolve: {
                 allProducts: function(productsFactory) {
@@ -52,7 +52,7 @@ angular
     	})
     	.state("showproduct", {
     		url:"/products/:id",
-    		templateUrl: 'assets/templates/products/show.html', //removes assets/templates/ from path for heroku
+    		templateUrl: 'templates/products/show.html', //removes templates/ from path for heroku
     		controller: "showProductController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -71,7 +71,7 @@ angular
     	})
         .state("userfavorites", {
             url: "/favorites",
-            templateUrl: 'assets/templates/favorites/index.html', //removes assets/templates/ from path for heroku
+            templateUrl: 'templates/favorites/index.html', //removes templates/ from path for heroku
             controller: "favoritesController"
         })
 
