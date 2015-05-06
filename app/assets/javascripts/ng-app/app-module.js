@@ -6,7 +6,7 @@ angular
 
     $stateProvider
     	.state("home", {
-    		url: "/",
+    		url: "/home",
     		templateUrl: "pages/index.html",
             controller: "homeController",
             resolve: {
@@ -74,7 +74,7 @@ angular
             templateUrl: "favorites/favorites.html",
             controller: "favoritesController"
         })
-        
-        $urlRouterProvider.otherwise('/');
+
+        $urlRouterProvider.otherwise('/home');
 
   }])
