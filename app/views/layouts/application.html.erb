@@ -10,7 +10,6 @@
 <body>
 
 <h1><%= link_to 'OOTD Collection', root_path %></h1>
-<p><%=  Rails.application.config.assets.paths %></p>
 <% if current_user %>
 	<a ui-sref="userfavorites">Favorites</a>
 	<% if current_user.is_admin? %>
