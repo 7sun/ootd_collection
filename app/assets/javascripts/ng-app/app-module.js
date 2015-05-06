@@ -6,7 +6,7 @@ angular
 
     $stateProvider
     	.state("home", {
-    		url: "/",
+    		url: '',
     		templateUrl: 'pages/index.html',
             controller: "homeController",
             resolve: {
