@@ -1,0 +1,12 @@
+<div>
+	<div class="product-text">
+		<h2>{{product.style}} <i ng-click="toggleFavorite()" class="heart fa fa-heart-o"></i></h2>
+		<h3>{{product.style_num}}</h3>
+		<p>{{product.description}}</p>
+		<li class="materials">{{product.materials}}</li>
+	</div>
+	<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">
+	<div class="image-group">
+		<img class="product-thumbs" ng-repeat="image in productImages" ng-click="$parent.imgNum=$index" ng-src="{{image.source.small.url}}" alt="{{$index}}">
+	</div>
+</div>
