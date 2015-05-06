@@ -1,4 +1,5 @@
 html {
+	font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 	background-color: #FDFDFD;
 	color: #010101;
 }
@@ -50,7 +51,6 @@ li {
 
 .product {
 	float: left;
-	text-align: center;
 	height: 20em;
 }
 
@@ -60,6 +60,15 @@ img {
 
 .product > a > img {
 	margin: 1em 3em;
+}
+
+.product > p {
+	width: 135px;
+  margin: 0 auto;
+}
+
+.product > p > i {
+	float: right;
 }
 
 p {
