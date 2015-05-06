@@ -7,7 +7,7 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		templateUrl: "pages/index.html", //removes assets/ from path for heroku
+    		templateUrl: "assets/pages/index.html", //removes assets/ from path for heroku
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -20,20 +20,20 @@ angular
     	})
         .state("contact", {
             url: "/contact",
-            templateUrl: "pages/contact.html" //removes  from path for heroku
+            templateUrl: "assets/pages/contact.html" //removes  from path for heroku
         })
         .state("about", {
             url: "/about",
-            templateUrl: "pages/about.html" //removes  from path for heroku
+            templateUrl: "assets/pages/about.html" //removes  from path for heroku
         })
         .state("stockists", {
             url:"/stockists",
-            templateUrl: "stockists/index.html", //removes  from path for heroku
+            templateUrl: "assets/stockists/index.html", //removes  from path for heroku
             controller: "stockistsController"
         })
     	.state("products", {
     		url:"/products",
-    		templateUrl: "products/index.html", //removes  from path for heroku
+    		templateUrl: "assets/products/index.html", //removes  from path for heroku
     		controller: "productsController",
             resolve: {
                 allProducts: function(productsFactory) {
@@ -52,7 +52,7 @@ angular
     	})
     	.state("showproduct", {
     		url:"/products/:id",
-    		templateUrl: 'products/show.html', //removes  from path for heroku
+    		templateUrl: 'assets/products/show.html', //removes  from path for heroku
     		controller: "showProductController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -71,7 +71,7 @@ angular
     	})
         .state("userfavorites", {
             url: "/favorites",
-            templateUrl: 'favorites/index.html', //removes  from path for heroku
+            templateUrl: 'assets/favorites/index.html', //removes  from path for heroku
             controller: "favoritesController"
         })
 
