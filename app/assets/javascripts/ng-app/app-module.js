@@ -6,8 +6,8 @@ angular
 
     $stateProvider
     	.state("home", {
-    		url: '',
-    		templateUrl: 'pages/index.html',
+    		url: "/",
+    		templateUrl: "pages/index.html",
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -20,20 +20,20 @@ angular
     	})
         .state("contact", {
             url: "/contact",
-            templateUrl: 'pages/contact.html'
+            templateUrl: "pages/contact.html"
         })
         .state("about", {
             url: "/about",
-            templateUrl: 'pages/about.html'
+            templateUrl: "pages/about.html"
         })
         .state("stockists", {
             url:"/stockists",
-            templateUrl: 'stockists/stockists.html',
+            templateUrl: "stockists/stockists.html",
             controller: "stockistsController"
         })
     	.state("products", {
     		url:"/products",
-    		templateUrl: 'products/products.html',
+    		templateUrl: "products/products.html",
     		controller: "productsController",
             resolve: {
                 allProducts: function(productsFactory) {
@@ -52,7 +52,7 @@ angular
     	})
     	.state("showproduct", {
     		url:"/products/:id",
-    		templateUrl: 'products/showproduct.html',
+    		templateUrl: "products/showproduct.html",
     		controller: "showProductController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -71,8 +71,10 @@ angular
     	})
         .state("userfavorites", {
             url: "/favorites",
-            templateUrl: 'favorites/favorites.html',
+            templateUrl: "favorites/favorites.html",
             controller: "favoritesController"
         })
+        
+        $urlRouterProvider.otherwise('/');
 
   }])
