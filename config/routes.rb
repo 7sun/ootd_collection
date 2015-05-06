@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     resources :stockists, except: :show
     resources :collections
     get '/favorites' => 'favorites#index'
-    # get '/'      => 'pages#index', as: 'home'
     root 'pages#index'
   end
   
@@ -22,9 +21,6 @@ Rails.application.routes.draw do
   get '/login'        => 'sessions#new', as: 'login'
   post '/login'       => 'sessions#create'
   get '/logout'       => 'sessions#destroy', as: 'logout'
-  # get '/collection'   => 'collections#current', as: 'collection'
-  # get '/about'        => 'pages#about', as: 'about'
-  # get '/contact'      => 'pages#contact', as: 'contact'
 
 
 end

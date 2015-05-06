@@ -1,5 +1,5 @@
 angular
-	.module("ootd", ['ngResource', 'ngAnimate', 'ui.router', 'templates'])
+	.module("ootd", ['ngResource', 'templates', 'ui.router'])
 	.config(['$httpProvider', '$stateProvider' , '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
   	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
@@ -7,7 +7,7 @@ angular
     $stateProvider
     	.state("home", {
     		url: "",
-    		templateUrl: "assets/pages/index.html", //removes assets/ from path for heroku
+    		templateUrl: 'pages/index.html',
             controller: "homeController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -20,20 +20,20 @@ angular
     	})
         .state("contact", {
             url: "/contact",
-            templateUrl: "assets/pages/contact.html" //removes  from path for heroku
+            templateUrl: 'pages/contact.html'
         })
         .state("about", {
             url: "/about",
-            templateUrl: "assets/pages/about.html" //removes  from path for heroku
+            templateUrl: 'pages/about.html'
         })
         .state("stockists", {
             url:"/stockists",
-            templateUrl: "assets/stockists/index.html", //removes  from path for heroku
+            templateUrl: 'stockists/stockists.html',
             controller: "stockistsController"
         })
     	.state("products", {
     		url:"/products",
-    		templateUrl: "assets/products/index.html", //removes  from path for heroku
+    		templateUrl: 'products/products.html',
     		controller: "productsController",
             resolve: {
                 allProducts: function(productsFactory) {
@@ -52,7 +52,7 @@ angular
     	})
     	.state("showproduct", {
     		url:"/products/:id",
-    		templateUrl: 'assets/products/show.html', //removes  from path for heroku
+    		templateUrl: 'products/showproduct.html',
     		controller: "showProductController",
             resolve: {
                 currentUser: function(usersFactory) {
@@ -71,7 +71,7 @@ angular
     	})
         .state("userfavorites", {
             url: "/favorites",
-            templateUrl: 'assets/favorites/index.html', //removes  from path for heroku
+            templateUrl: 'favorites/favorites.html',
             controller: "favoritesController"
         })
 

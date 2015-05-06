@@ -35,6 +35,8 @@ gem 'active_model_serializers'
 # Adds sweet vector icons
 gem "font-awesome-rails"
 
+gem 'sprockets', '2.12.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
