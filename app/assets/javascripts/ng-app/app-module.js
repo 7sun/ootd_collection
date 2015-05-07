@@ -7,7 +7,7 @@ angular
         $stateProvider
         	.state("home", {
         		// url: "",
-        		templateUrl: "pages/index.html",
+        		templateUrl: "pages/home.html",
                 controller: "homeController",
                 resolve: {
                     currentUser: function(usersFactory) {
