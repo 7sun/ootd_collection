@@ -62,7 +62,7 @@ angular
                         .then(function(object){
                             return object.data;
                         })
-                    },
+                    }],
                     showProduct: ['productsFactory', '$stateParams', function(productsFactory, $stateParams) {
                         return productsFactory.getProduct($stateParams.id)
                         .then(function(object){
