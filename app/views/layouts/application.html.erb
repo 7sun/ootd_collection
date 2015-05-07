@@ -15,14 +15,17 @@
 	<%= render 'logo' %>
 
 	<div id="auth-links">
-		<% if current_user.is_admin? %>
-			<p><%= link_to "admin", admin_root_path %> | <%= link_to 'logout', logout_path %></p>
-		<% elsif current_user %>
-			<%= current_user.email %> | <%= link_to 'logout', logout_path %>
+		<% if current_user %>
+			<% if current_user.is_admin? %>
+				<p><%= link_to "admin", admin_root_path %> | <%= link_to 'logout', logout_path %></p>
+			<% else %>
+				<%= current_user.email %> | <%= link_to 'logout', logout_path %>
+			<% end %>
 		<% else %>
 			<%= link_to 'Login', login_path %>
 		<% end %>
 	</div>
+	
 </header>
 
 <%= yield %>
