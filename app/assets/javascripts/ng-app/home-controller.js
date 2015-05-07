@@ -1,12 +1,13 @@
 angular
 	.module("ootd")
-  .controller("homeController", ['$scope', function($scope){
-  	// if(currentUser){
-  	// 	$scope.currentUser = currentUser;
-  	// 	console.log("set current user: " + currentUser)
-  	// }
-  	// else {
-  	// 	console.log("no current user here!");
-  	// }
+  .controller("homeController", ["currentUser", '$scope', function(currentUser, $scope){
+  	if(currentUser){
+  		$scope.currentUser = currentUser;
+  		console.log("set current user: " + currentUser)
+  	}
+  	else {
+  		console.log(currentUser);
+  		console.log("no current user here!");
+  	}
 
 	}]);
