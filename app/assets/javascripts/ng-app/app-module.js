@@ -11,12 +11,12 @@ angular
                 controller: "homeController"
                 ,
                 resolve: {
-                    currentUser: function(usersFactory) {
+                    currentUser: ['usersFactory', function(usersFactory) {
                         return usersFactory.getUser()
                         // .then(function(object){
                         //     return object.data;
                         // })
-                    }
+                    }]
                 }
         	})
             .state("contact", {
