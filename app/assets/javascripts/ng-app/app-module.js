@@ -13,9 +13,9 @@ angular
                 resolve: {
                     currentUser: ['usersFactory', function(usersFactory) {
                         return usersFactory.getUser()
-                        // .then(function(object){
-                        //     return object.data;
-                        // })
+                        .then(function(object){
+                            return object.data;
+                        })
                     }]
                 }
         	})
@@ -83,7 +83,6 @@ angular
 
     .run(['$state', function($state){
         $state.go('home');
-        console.log("ran run block in module");
     }])
 
     
