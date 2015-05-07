@@ -8,7 +8,11 @@ html {
 
 body {
 	margin: 0 auto;
-	width: 900px;
+	width: 1000px;
+}
+
+#main-container {
+	padding-top: 140px;
 }
 
 ul {
@@ -63,10 +67,6 @@ a:hover {
 
 
 /*PRODUCTS INDEX******************************************************************************/
-
-.container {
-	padding-top: 140px;
-}
 
 .product-nav {
 	position: fixed;

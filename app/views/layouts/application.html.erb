@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html ng-app="ootd">
-<head>
-  <title>OOTD Collection</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>OOTD Collection</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= javascript_include_tag 'application' %>
+	  <%= favicon_link_tag 'favicon.ico' %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<!-- <h1><%#= link_to 'OOTD Collection', root_path %></h1> -->
+		<header>
+			<%= render 'logo' %>
 
-<header>
-	<%= render 'logo' %>
+			<div id="auth-links">
+				<% if current_user %>
+					<% if current_user.is_admin? %>
+						<p><%= link_to "admin", admin_root_path %> | <%= link_to 'logout', logout_path %></p>
+					<% else %>
+						<%= current_user.email %> | <%= link_to 'logout', logout_path %>
+					<% end %>
+				<% else %>
+					<%= link_to 'Login', login_path %>
+				<% end %>
+			</div>
+		</header>
 
-	<div id="auth-links">
-		<% if current_user %>
-			<% if current_user.is_admin? %>
-				<p><%= link_to "admin", admin_root_path %> | <%= link_to 'logout', logout_path %></p>
-			<% else %>
-				<%= current_user.email %> | <%= link_to 'logout', logout_path %>
-			<% end %>
-		<% else %>
-			<%= link_to 'Login', login_path %>
-		<% end %>
-	</div>
-	
-</header>
+		<div id="main-container">
+			<%= yield %>
+		</div>
 
-<%= yield %>
-
-</body>
+	</body>
 </html>
