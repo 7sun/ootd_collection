@@ -37,18 +37,18 @@ angular
         		templateUrl: "products/products.html",
         		controller: "productsController",
                 resolve: {
-                    allProducts: function(productsFactory) {
+                    allProducts: ['productsFactory', function(productsFactory) {
                         return productsFactory.getAllProducts()
                         .then(function(object){
                             return object.data.products;
                         })
-                    },
-                    currentUser: function(usersFactory) {
+                    }],
+                    currentUser: ['usersFactory', function(usersFactory) {
                         return usersFactory.getUser()
                         .then(function(object){
                             return object.data;
                         })
-                    }
+                    }]
                 }
         	})
         	.state("showproduct", {
@@ -57,18 +57,18 @@ angular
         		controller: "showProductController",
                 params: {id: null},
                 resolve: {
-                    currentUser: function(usersFactory) {
+                    currentUser: ['usersFactory', function(usersFactory) {
                         return usersFactory.getUser()
                         .then(function(object){
                             return object.data;
                         })
                     },
-                    showProduct: function(productsFactory, $stateParams) {
+                    showProduct: ['productsFactory', '$stateParams', function(productsFactory, $stateParams) {
                         return productsFactory.getProduct($stateParams.id)
                         .then(function(object){
                             return object.data.product;
                         })
-                    }
+                    }]
                 }
         	})
             .state("userfavorites", {
