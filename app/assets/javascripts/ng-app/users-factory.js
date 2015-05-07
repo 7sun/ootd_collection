@@ -4,8 +4,8 @@ angular
 		var currentUser = {};
 		var url = '/api/currentuser';
 		currentUser.getUser = function(){
-			return $http.get(url);
-			// return "bob";
+			// return $http.get(url);
+			return "bob";
 		}
 		return currentUser;
 	}])

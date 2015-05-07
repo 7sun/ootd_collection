@@ -13,9 +13,9 @@ angular
                 resolve: {
                     currentUser: function(usersFactory) {
                         return usersFactory.getUser()
-                        .then(function(object){
-                            return object.data;
-                        })
+                        // .then(function(object){
+                        //     return object.data;
+                        // })
                     }
                 }
         	})
