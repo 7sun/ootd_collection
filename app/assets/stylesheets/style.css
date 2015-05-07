@@ -1,3 +1,5 @@
+/*GENERAL*******************************************************************************/
+
 html {
 	font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 	background-color: #FDFDFD;
@@ -5,16 +7,8 @@ html {
 }
 
 body {
-	margin: 4em 14em;
-}
-
-input {
-	display: block;
-	margin-bottom: 1em;
-}
-
-h1 {
-	display: inline;
+	margin: 0 auto;
+	width: 900px;
 }
 
 ul {
@@ -26,6 +20,29 @@ li {
 	list-style-type: none;
 }
 
+img {
+	border: 1px solid #ABABAB;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+.fa-heart {
+	color: red;
+}
+
+
+/*HEADER**************************************************************************************/
+
+header {
+	z-index: 99999;
+	padding: 2em 0;
+	position: fixed;
+	width: inherit;
+	background: linear-gradient(to bottom, rgba(253, 253, 253, 1) 75%, rgba(0, 0, 0, 0));
+}
+
 .site-nav {
 	text-align: center;
 }
@@ -35,31 +52,56 @@ li {
 	margin-right: 20px;
 }
 
-.nav-col {
-	max-width: 15%;
-	float: left;
+a {
+	color: #010101;
+	text-decoration: none;
 }
 
-.content-col {
-	width: 85%;
-	float: left;
+a:hover {
+	color: #ABABAB;
+}
+
+
+/*PRODUCTS INDEX******************************************************************************/
+
+.container {
+	padding-top: 140px;
+}
+
+.product-nav {
+	position: fixed;
+}
+
+.product-nav > ul > li {
+	cursor: pointer;
+}
+
+.product-nav > ul > li:hover {
+	color: #ABABAB;
+}
+
+
+
+input {
+	display: block;
+	margin-bottom: 1em;
+	width: 6em;
+}
+
+#products {
+	width: 693px;
+  margin: 0 auto;
 }
 
 #auth-links {
+	margin-top: 24px;
 	float: right;
+	width: 150px;
 }
 
 .product {
 	float: left;
 	height: 20em;
-}
-
-img {
-	border: 1px solid #ABABAB;
-}
-
-.product > a > img {
-	margin: 1em 3em;
 }
 
 .product > p {
@@ -71,18 +113,12 @@ img {
 	float: right;
 }
 
-p {
-	margin: 0 0 1em;
+.product > a > img {
+	margin: 0em 3em 1em;
 }
 
-a {
-	color: #010101;
-	text-decoration: none;
-}
 
-a:hover {
-	color: #ABABAB;
-}
+/*PRODUCT SHOW******************************************************************************/
 
 .product-hero {
 	display: block;
@@ -109,10 +145,6 @@ a:hover {
 
 .materials {
 	list-style: square;
-}
-
-.fa-heart {
-	color: red;
 }
 
 .fav-squares {
