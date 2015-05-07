@@ -8,15 +8,16 @@ angular
         	.state("home", {
         		// url: "",
         		templateUrl: "pages/home.html",
-                controller: "homeController",
-                resolve: {
-                    currentUser: function(usersFactory) {
-                        return usersFactory.getUser()
-                        .then(function(object){
-                            return object.data;
-                        })
-                    }
-                }
+                controller: "homeController"
+                // ,
+                // resolve: {
+                //     currentUser: function(usersFactory) {
+                //         return usersFactory.getUser()
+                //         .then(function(object){
+                //             return object.data;
+                //         })
+                //     }
+                // }
         	})
             .state("contact", {
                 // url: "/contact",
