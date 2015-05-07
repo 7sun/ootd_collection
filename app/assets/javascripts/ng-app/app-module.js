@@ -81,7 +81,7 @@ angular
     }])
 
     .run(['$state', function($state){
-        $state.go('about');
+        $state.go('home');
         console.log("ran run block in module");
     }])
 
