@@ -1,5 +1,11 @@
-<h2>My Favorites</h2>
-<div class="fav-squares" ng-repeat="fav in favProducts">	
-	<img class="product-med" ng-src="{{fav.images[0].source.small.url}}" alt="">
-	<p>{{fav.style_num}}</p>
+<div class="sub-header"></div>
+
+<div class="container">
+	<h2><i class="fa fa-heart-o"></i></h2>
+	<section class="products">
+		<div class="product alt-font" ng-repeat="fav in favProducts">	
+			<img ng-src="{{fav.images[0].source.small.url}}" alt="">
+			<p>{{fav.style_num}}</p>
+		</div>
+	</section>
 </div>

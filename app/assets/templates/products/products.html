@@ -1,23 +1,32 @@
-<div>
+<div class="sub-header">
 
 	<nav class="product-nav">
 		<ul>
-			<li ng-click="products = productsArray" ng-class="{'selected':selectedoption=='collection'}">collection</li></a>
+			<!-- <li ng-click="products = productsArray" ng-class="{'selected':selectedoption=='collection'}">all</li></a> -->
 			<li ng-click="products = topsArray" ng-class="{'selected':selectedoption=='tops'}">tops</li>
 			<li ng-click="products = pantsArray" ng-class="{'selected':selectedoption=='pants'}">pants</li>
 			<li ng-click="products = skirtsArray" ng-class="{'selected':selectedoption=='skirts'}">skirts</li>
 			<li ng-click="products = dressesArray" ng-class="{'selected':selectedoption=='dresses'}">dresses</li>
 			<li ng-click="products = jacketsArray" ng-class="{'selected':selectedoption=='jackets'}">jackets</li>
-			<li><input placeholder="search" type="text" ng-model="search"></li>		
+			<!-- <li><input placeholder="search" type="text" ng-model="search"></li>		 -->
 		</ul>
 	</nav>
+	
+</div>
 
-	<section id="products">
-		<div class="product" ng-repeat="product in products | filter: search" ng-animate=" 'animate' ">
+
+<div class="container">
+
+<!-- <div> -->
+
+	<section class="products">
+		<div class="product alt-font" ng-repeat="product in products | filter: search" ng-animate=" 'animate' ">
 			<a ui-sref="showproduct({id: product.id })"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
 			<a ui-sref="showproduct({id: product.id })"><p>{{product.style_num}} </a>
 			<i ng-click="toggleFavorite($index, product.id)" id="heart-{{$index}}" class="fa fa-heart-o"></i></p>
 		</div>
 	</section>
+
+<!-- </div> -->
 
 </div>

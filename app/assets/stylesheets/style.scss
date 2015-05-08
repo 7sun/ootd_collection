@@ -1,8 +1,10 @@
 /*Variables *****************************************************************************/
 
 $base-color: #FDFDFD;
-$base-font-color: #010101;
+// $base-font-color: #010101;
+$base-font-color: #635959;
 $grey: #C4B3BC;
+$dark-grey: #635959;
 $base-font-size: 16px;
 
 
@@ -23,7 +25,7 @@ $base-font-size: 16px;
 
 html {
 	box-sizing: border-box;
-	font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 	// constantia for links
 	// style_nums and product description aparajita
 	background-color: #FDFDFD;
@@ -36,15 +38,16 @@ html {
 }
 
 body {
-	margin: 0 auto;
-	width: 1000px;
+	text-align: center;
 }
 
 #main-container {
-	padding-top: 180px;
+	padding-top: 120px;
 }
 
 .container {
+	width: 1000px;
+	padding-top: 3em;
 	@include outer-container;
 }
 
@@ -71,8 +74,21 @@ li {
 	list-style-type: none;
 }
 
+h2 {
+	margin-top: 0;
+}
+
 p {
 	margin: 0 0 1em;
+}
+
+a {
+	color: $grey;
+	text-decoration: none;
+	&:hover {
+		color: $base-font-color;
+		cursor: pointer;
+	}
 }
 
 .red {
@@ -80,12 +96,65 @@ p {
 }
 
 .active {
-	color: $grey;
+	color: $base-font-color;
+}
+
+.alt-font {
+	font-family: Aparjita, TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	text-transform: uppercase;
+}
+
+/*HEADER**************************************************************************************/
+
+#logo-main {
+	display: block;
+  margin: 0 auto 1em;
+}
+
+header {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.header-container {
+	z-index: 99999;
+	padding: 1em 0;
+	position: fixed;
+	width: inherit;
+	background-color: $base-color;
+	// @include background(linear-gradient(to bottom, $base-color 75%, rgba(255, 255, 255, 0)));
+}
+
+nav {
+	margin: 0.2em 0;
+	li {
+		display: inline;
+		margin: 0 30px;
+	}
+}
+
+.sub-header {
+	width: 100%;
+	background-color: $grey;
+	position: fixed;
+	z-index: 99999;
+	min-height: .5em;
+}
+
+.sub-nav {
+	margin: 0.4em 0;
+}
+
+#auth-links {
+	position: absolute;
+  top: 31px;
+  right: 0;
+  font-size: 12px;
 }
 
 #social-group {
 	position: absolute;
-  top: 38px;
+  top: 28px;
 }
 
 .social {
@@ -98,61 +167,17 @@ p {
 	float: left;
 }
 
-/*HEADER**************************************************************************************/
-
-#logo-main {
-	display: block;
-  margin: 0 auto;
-}
-
-header {
-	z-index: 99999;
-	padding: 2em 0;
-	position: fixed;
-	width: inherit;
-	@include background(linear-gradient(to bottom, $base-color 75%, rgba(255, 255, 255, 0)));
-}
-
-.site-nav {
-	text-align: center;
-	margin: 2em 0 1em;
-}
-
-.site-nav > ul > li {
-	display: inline;
-	margin: 0 30px;
-}
-
-a {
-	color: $base-font-color;
-	text-decoration: none;
-}
-
-a:hover {
-	color: $grey;
-	cursor: pointer;
-}
-
-#auth-links {
-	position: absolute;
-  top: 47px;
-  right: 0;
-  font-size: 12px;
-}
-
 
 /*PRODUCTS INDEX******************************************************************************/
 
 .product-nav {
-	position: fixed;
-}
-
-.product-nav > ul > li {
-	cursor: pointer;
-}
-
-.product-nav > ul > li:hover {
-	color: $grey;
+	color: $base-color;
+	li {
+		cursor: pointer;
+		&:hover {
+			color: $dark-grey;
+		}
+	}
 }
 
 input {
@@ -161,27 +186,25 @@ input {
 	width: 6em;
 }
 
-#products {
-	width: 693px;
+.products {
+	width: 852px;
   margin: 0 auto;
 }
 
 .product {
 	float: left;
-	height: 20em;
-}
-
-.product > p {
-	width: 135px;
-  margin: 0 auto;
-}
-
-.product > p > i {
-	float: right;
-}
-
-.product > a > img {
-	margin: 0em 3em 1em;
+	height: 19em;
+	img {
+		margin: 0em 2.5em 1em;
+	}
+	p {
+		width: 135px;
+	  margin: 0 auto;
+	  text-align: left;
+	  i {
+	  	float: right;
+	  }
+	}
 }
 
 .fa {
@@ -207,19 +230,15 @@ input {
 .product-text {
 	display: table-cell;
 	vertical-align: middle;
-	text-align: center;
-	// margin: 50% 0;
-	// 
 }
 
 .product-thumbs {
 	height: 190px;
 	margin-bottom: 15px;
 	display: block;
-}
-
-.product-thumbs:last-child {
-	margin-bottom: 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .materials {
@@ -233,7 +252,8 @@ input {
 	top: 3px;
 }
 
-.fav-squares {
-	float: left;
-	margin: 1em 3em;
+/*STATIC PAGES******************************************************************************/
+
+.contact-container {
+	margin-top: 1em;
 }

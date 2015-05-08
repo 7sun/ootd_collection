@@ -76,8 +76,10 @@ angular
                 templateUrl: "favorites/favorites.html",
                 controller: "favoritesController"
             })
-
-        // $urlRouterProvider.otherwise('/');
+            .state("lookbook", {
+                // url: "/lookbook",
+                templateUrl: "lookbook/lookbook.html"
+            })
 
     }])
 
