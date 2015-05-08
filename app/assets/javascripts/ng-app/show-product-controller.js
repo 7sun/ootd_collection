@@ -1,12 +1,15 @@
 angular
 	.module("ootd")
-  .controller("showProductController", ['currentUser', 'showProduct', '$scope', '$http', '$resource', '$stateParams', function(currentUser, showProduct, $scope, $http, $resource, $stateParams){
+  .controller("showProductController", ['currentUser', 'showProduct', '$scope', '$http', '$resource', '$stateParams', '$timeout', function(currentUser, showProduct, $scope, $http, $resource, $stateParams, $timeout){
 
 	  var Favorite = $resource('api/favorites/:id', {id:'@id'});
 	  var userFavorited;
 	  $scope.currentUser = currentUser;
 	  $scope.product = showProduct;
-	  $scope.productImages = showProduct.images;
+
+	  $timeout(function(){
+	  	$scope.productImages = showProduct.images;
+	  })
 
 
     // Called when the heart icon is clicked. 

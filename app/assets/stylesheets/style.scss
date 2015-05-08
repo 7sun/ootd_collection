@@ -23,33 +23,23 @@ $base-font-size: 16px;
 
 /*ANIMATIONS *****************************************************************************/
 
-
-/*
- * ngRepeat triggers three animation events: enter, leave and move.
- */
 .repeat-animation.ng-enter,
-// .repeat-animation.ng-leave,
 .repeat-animation.ng-move {
   @include transition(0.5s linear all);
 }
 
 .repeat-animation.ng-enter-stagger,
-// .repeat-animation.ng-leave-stagger,
 .repeat-animation.ng-move-stagger {
-  /* 50ms between each item being animated after the other */
   @include transition-delay(70ms);
-
-  /* this is required here to prevent any CSS inheritance issues */
+  /* prevents any CSS inheritance issues */
   @include transition-duration(0);
 }
 
-/* ending enter and move styling
-   (this is what the element will animate from */
+/* ending enter and move styling*/
 .repeat-animation.ng-enter,
 .repeat-animation.ng-move { opacity:0; }
 
-/* ending enter and move styling
-   (this is what the element will animate towards */
+/* ending enter and move styling */
 .repeat-animation.ng-enter.ng-enter-active,
 .repeat-animation.ng-move.ng-move-active { opacity:1; }
 
