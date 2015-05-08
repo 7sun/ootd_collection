@@ -133,6 +133,10 @@ a {
 	text-transform: uppercase;
 }
 
+.sub-header.shadow {
+	box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+}
+
 /*HEADER**************************************************************************************/
 
 #logo-main {
@@ -168,6 +172,7 @@ nav {
 	position: fixed;
 	z-index: 99999;
 	min-height: .5em;
+	@include transition(all 0.2s linear);
 }
 
 .sub-nav {
