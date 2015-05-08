@@ -1,5 +1,5 @@
 angular
-	.module("ootd", ['ngResource', 'templates', 'ui.router'])
+	.module("ootd", ['ngResource', 'templates', 'ui.router', 'ngAnimate'])
 	.config(['$httpProvider', '$stateProvider' , '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
       	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
           $('meta[name=csrf-token]').attr('content');
@@ -86,5 +86,18 @@ angular
     .run(['$state', function($state){
         $state.go('home');
     }])
+
+    .directive('onFinishRender', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        }
+    });
 
     

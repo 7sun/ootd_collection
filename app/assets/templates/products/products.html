@@ -2,7 +2,7 @@
 
 	<nav class="product-nav">
 		<ul>
-			<!-- <li ng-click="products = productsArray" ng-class="{'selected':selectedoption=='collection'}">all</li></a> -->
+			<li ng-click="products = productsArray" ng-class="{'selected':selectedoption=='collection'}">collection</li></a>
 			<li ng-click="products = topsArray" ng-class="{'selected':selectedoption=='tops'}">tops</li>
 			<li ng-click="products = pantsArray" ng-class="{'selected':selectedoption=='pants'}">pants</li>
 			<li ng-click="products = skirtsArray" ng-class="{'selected':selectedoption=='skirts'}">skirts</li>
@@ -20,7 +20,7 @@
 <!-- <div> -->
 
 	<section class="products">
-		<div class="product alt-font" ng-repeat="product in products | filter: search" ng-animate=" 'animate' ">
+		<div class="product alt-font repeat-animation" ng-repeat="product in products" on-finish-render="ngRepeatFinished">
 			<a ui-sref="showproduct({id: product.id })"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
 			<a ui-sref="showproduct({id: product.id })"><p>{{product.style_num}} </a>
 			<i ng-click="toggleFavorite($index, product.id)" id="heart-{{$index}}" class="fa fa-heart-o"></i></p>

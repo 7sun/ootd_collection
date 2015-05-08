@@ -1,17 +1,21 @@
 angular
 	.module("ootd")
-  .controller("productsController", ['allProducts', 'currentUser', 'filterFilter', '$scope', '$http', function(allProducts, currentUser, filterFilter, $scope, $http){
+  .controller("productsController", ['allProducts', 'currentUser', 'filterFilter', '$scope', '$http', '$timeout', function(allProducts, currentUser, filterFilter, $scope, $http, $timeout){
 
-			$scope.products = allProducts;
-			var currentUser = currentUser;
+      var currentUser = currentUser;
+      $scope.products = [];
+      $timeout(function(){
+        $scope.products = allProducts;
+        // Creates filtered arrays for each product category
+        $scope.productsArray = $scope.products;
+        $scope.topsArray = filterFilter($scope.products, 'tops');
+        $scope.pantsArray = filterFilter($scope.products, 'pants');
+        $scope.skirtsArray = filterFilter($scope.products, 'skirt');
+        $scope.dressesArray = filterFilter($scope.products, 'dresses');
+        $scope.jacketsArray = filterFilter($scope.products, 'jackets');
+      })
 			
-			// Creates filtered arrays for each product category
-			$scope.productsArray = $scope.products;
-			$scope.topsArray = filterFilter($scope.products, 'tops');
-			$scope.pantsArray = filterFilter($scope.products, 'pants');
-			$scope.skirtsArray = filterFilter($scope.products, 'skirt');
-			$scope.dressesArray = filterFilter($scope.products, 'dresses');
-			$scope.jacketsArray = filterFilter($scope.products, 'jackets');
+
 
 
 	    // Called when the heart icon is clicked. 
@@ -69,11 +73,9 @@ angular
       	}
       }
 
-      // Waits 20ms for ng-repeat to load all icons before adding the fa-heart class.
-      setTimeout(
-      	function(){
-      		checkForFavorite();
-      	}, 20);
+      $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+        checkForFavorite();
+      });
 
 	}]);
 
