@@ -1,4 +1,13 @@
-/*Clearfix ///////////////////////////////////////*/
+/*Variables *****************************************************************************/
+
+$base-color: #FDFDFD;
+$base-font-color: #010101;
+$grey: #ABABAB;
+$maverick: #C4B3BC;
+$base-font-size: 16px;
+
+
+/*Clearfix *****************************************************************************/
 
 .cf:before,
 .cf:after {
@@ -12,11 +21,6 @@
 
 
 /*GENERAL*******************************************************************************/
-
-$base-color: #FDFDFD;
-$base-font-color: #010101;
-$grey: #ABABAB;
-$base-font-size: 16px;
 
 html {
 	box-sizing: border-box;
@@ -68,10 +72,6 @@ li {
 	list-style-type: none;
 }
 
-img {
-	// border: 1px solid #ABABAB;
-}
-
 p {
 	margin: 0 0 1em;
 }
@@ -84,7 +84,8 @@ p {
 /*HEADER**************************************************************************************/
 
 #logo-main {
-	float: left
+	display: block;
+  margin: 0 auto;
 }
 
 header {
@@ -96,16 +97,13 @@ header {
 }
 
 .site-nav {
-	float: left;
-	min-height: 70px;
-	line-height: 70px;
-	margin-left: 3em;
-
+	text-align: center;
+	margin: 2em 0 1em;
 }
 
 .site-nav > ul > li {
 	display: inline;
-	margin-right: 20px;
+	margin: 0 40px;
 }
 
 a {
