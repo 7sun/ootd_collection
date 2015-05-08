@@ -35,7 +35,7 @@ angular
   	  	$http.post('/api/favorites/', {product_id: product})
   	  	.success(function(){
   	  		var idName = "#heart-" + index;
-  				$(idName).toggleClass("fa-heart-o fa-heart");
+  				$(idName).addClass("red");
   	  	});
   	  }
 
@@ -48,7 +48,7 @@ angular
     				$http.delete('/api/favorites/' + favorite.id)
     				.success(function(){
     					var idName = "#heart-" + index;
-  						$(idName).toggleClass("fa-heart-o fa-heart");
+  						$(idName).removeClass("red");
     				})
     			}
     		}
@@ -62,8 +62,7 @@ angular
       		for(var j = 0; j < faves.length; j++) {
       			if(faves[j].user_id == currentUser.id){
       				var idName = "#heart-" + [i];
-      				$(idName).removeClass("fa-heart-o");
-      				$(idName).addClass("fa-heart");
+      				$(idName).addClass("red");
       				window['faves' + [i]] = true;
       			}
       		}

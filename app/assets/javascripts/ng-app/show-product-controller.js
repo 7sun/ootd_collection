@@ -31,7 +31,7 @@ angular
 	  	new Favorite({
 		  	product_id: $scope.product.id
 	  	}).$save(function(){
-				$(".heart").toggleClass("fa-heart-o fa-heart");
+				$(".heart").addClass("red");
 	  	});
 	  }
 
@@ -41,7 +41,7 @@ angular
 	  		console.log(favorite);
 	  		console.log("favorite deleted!");
 	  		favorite.$delete();
-				$(".heart").toggleClass("fa-heart-o fa-heart");
+				$(".heart").removeClass("red");
 	  	})
 	  }
 
@@ -56,8 +56,7 @@ angular
     		for(var i = 0; i < favs.length; i++) {
     			if(favs[i].user_id == $scope.currentUser.id){
     				console.log("The current user has favorited this product");
-    				$(".heart").removeClass("fa-heart-o");
-    				$(".heart").addClass("fa-heart");
+    				$(".heart").addClass("red");
     				userFavorited = true;
     				$scope.favorite = favs[i];
     			}

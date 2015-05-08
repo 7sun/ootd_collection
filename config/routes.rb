@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :stockists
     resources :collections
     resources :favorites
+    get '/instagram'   => 'instagram#index'
     get '/currentuser' => 'users#currentuser'
   end
 

@@ -12,6 +12,21 @@
 		<header>
 			<%= render 'logo' %>
 
+			<nav class="site-nav">
+				<ul>
+					<% if current_user %>
+						<li><a ui-sref="products">products</a></li>
+					<% else %>
+						<li><a href="/login">products</a></li>
+					<% end %>
+					<li><a ui-sref="about">about</a></li>
+					<li><a ui-sref="contact">contact</a></li>
+					<li><a ui-sref="stockists">stockists</a></li>
+					<li><a ui-sref="userfavorites"><i class="fa fa-heart-o red"></i></a></li>
+					<li><a href="https://instagram.com/ootd.collection/" target="_blank">#ootdcollection</a></li>
+				</ul>
+			</nav>
+
 			<div id="auth-links">
 				<% if current_user %>
 					<% if current_user.is_admin? %>

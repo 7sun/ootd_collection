@@ -1,12 +1,20 @@
-<div>
-	<div class="product-text">
-		<h2>{{product.style}} <i ng-click="toggleFavorite()" class="heart fa fa-heart-o"></i></h2>
-		<h3>{{product.style_num}}</h3>
-		<p>{{product.description}}</p>
-		<li class="materials">{{product.materials}}</li>
+	<div id="col-1" class="column">
+		<div class="image-group">
+			<img class="product-thumbs" ng-repeat="image in productImages" ng-click="$parent.imgNum=$index" ng-src="{{image.source.small.url}}" alt="{{$index}}">
+		</div>
 	</div>
-	<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">
-	<div class="image-group">
-		<img class="product-thumbs" ng-repeat="image in productImages" ng-click="$parent.imgNum=$index" ng-src="{{image.source.small.url}}" alt="{{$index}}">
+
+	<div id="col-2" class="column">
+		<div class="image-layer">
+			<i ng-click="toggleFavorite()" class="show-heart heart fa fa-heart-o"></i>
+			<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">	
+		</div>
 	</div>
-</div>
+
+	<div id="col-3" class="column">
+		<div class="product-text">
+			<p>{{product.style_num}}</p>
+			<p>{{product.description}}</p>
+			<p>{{product.materials}}</p>
+		</div>
+	</div>

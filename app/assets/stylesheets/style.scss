@@ -1,9 +1,35 @@
+/*Clearfix ///////////////////////////////////////*/
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+
 /*GENERAL*******************************************************************************/
 
+$base-color: #FDFDFD;
+$base-font-color: #010101;
+$grey: #ABABAB;
+$base-font-size: 16px;
+
 html {
+	box-sizing: border-box;
 	font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	// constantia for links
+	// style_nums and product description aparajita
 	background-color: #FDFDFD;
-	color: #010101;
+	color: $base-font-color;
+	font-size: $base-font-size;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
 body {
@@ -13,6 +39,24 @@ body {
 
 #main-container {
 	padding-top: 140px;
+}
+
+.container {
+	@include outer-container;
+}
+
+#col-1 {
+	@include span-columns(3);
+}
+
+#col-2 {
+	@include span-columns(6);
+}
+
+#col-3 {
+	@include span-columns(3);
+	display: table;
+	height: 600px;
 }
 
 ul {
@@ -25,30 +69,38 @@ li {
 }
 
 img {
-	border: 1px solid #ABABAB;
+	// border: 1px solid #ABABAB;
 }
 
 p {
 	margin: 0 0 1em;
 }
 
-.fa-heart {
+.red {
 	color: red;
 }
 
 
 /*HEADER**************************************************************************************/
 
+#logo-main {
+	float: left
+}
+
 header {
 	z-index: 99999;
 	padding: 2em 0;
 	position: fixed;
 	width: inherit;
-	background: linear-gradient(to bottom, rgba(253, 253, 253, 1) 75%, rgba(0, 0, 0, 0));
+	@include background(linear-gradient(to bottom, $base-color 75%, rgba(255, 255, 255, 0)));
 }
 
 .site-nav {
-	text-align: center;
+	float: left;
+	min-height: 70px;
+	line-height: 70px;
+	margin-left: 3em;
+
 }
 
 .site-nav > ul > li {
@@ -57,12 +109,13 @@ header {
 }
 
 a {
-	color: #010101;
+	color: $base-font-color;
 	text-decoration: none;
 }
 
 a:hover {
 	color: #ABABAB;
+	cursor: pointer;
 }
 
 
@@ -79,8 +132,6 @@ a:hover {
 .product-nav > ul > li:hover {
 	color: #ABABAB;
 }
-
-
 
 input {
 	display: block;
@@ -117,34 +168,53 @@ input {
 	margin: 0em 3em 1em;
 }
 
+.fa {
+	cursor: pointer;
+}
+
 
 /*PRODUCT SHOW******************************************************************************/
 
+.image-layer {
+	position: relative;
+}
+
 .product-hero {
 	display: block;
+	margin: 0 auto;
 }
 
 .image-group {
-	padding-top: 2em;
+	float: right;
 }
 
 .product-text {
-	float: left;
-	width: 420px;
-	height: 700px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	// margin: 50% 0;
+	// 
 }
 
 .product-thumbs {
-	height: 160px;
-	margin-right: 38px;
+	height: 190px;
+	margin-bottom: 15px;
+	display: block;
 }
 
 .product-thumbs:last-child {
-	margin: 0;
+	margin-bottom: 0;
 }
 
 .materials {
 	list-style: square;
+}
+
+.show-heart {
+	font-size: 1.3em;
+	position: absolute;
+	right: 54px;
+	top: 3px;
 }
 
 .fav-squares {
