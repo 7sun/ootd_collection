@@ -24,16 +24,32 @@
 				<% end %>
 			</div>
 
+			<div id="social-group">
+				<span class="fa-stack fa-lg">
+				  <i class="fa fa-circle fa-stack-2x"></i>
+				  <i class="social fa fa-facebook fa-stack-1x"></i>
+				</span>
+				<span class="fa-stack fa-lg">
+				  <i class="fa fa-circle fa-stack-2x"></i>
+				  <i class="social fa fa-instagram fa-stack-1x"></i>
+				</span>
+				<span class="fa-stack fa-lg">
+				  <i class="fa fa-circle fa-stack-2x"></i>
+				  <i class="social fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</div>
+
 			<nav class="site-nav">
 				<ul>
 					<% if current_user %>
-						<li><a ui-sref="products">collection</a></li>
+						<li><a ui-sref="products" ui-sref-active="active">collection</a></li>
 					<% else %>
 						<li><a href="/login">products</a></li>
 					<% end %>
-					<li><a ui-sref="about">about</a></li>
-					<li><a ui-sref="contact">contact</a></li>
-					<li><a ui-sref="userfavorites"><i class="fa fa-heart-o red"></i></a></li>
+					<li><a ui-sref="about" ui-sref-active="active">lookbook</a></li>
+					<li><a ui-sref="about" ui-sref-active="active">about</a></li>
+					<li><a ui-sref="contact" ui-sref-active="active">contact</a></li>
+					<li><a ui-sref="userfavorites" ui-sref-active="active"><i class="fa fa-heart-o red"></i></a></li>
 				</ul>
 			</nav>
 

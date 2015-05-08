@@ -2,8 +2,7 @@
 
 $base-color: #FDFDFD;
 $base-font-color: #010101;
-$grey: #ABABAB;
-$maverick: #C4B3BC;
+$grey: #C4B3BC;
 $base-font-size: 16px;
 
 
@@ -42,7 +41,7 @@ body {
 }
 
 #main-container {
-	padding-top: 140px;
+	padding-top: 180px;
 }
 
 .container {
@@ -80,6 +79,24 @@ p {
 	color: red;
 }
 
+.active {
+	color: $grey;
+}
+
+#social-group {
+	position: absolute;
+  top: 38px;
+}
+
+.social {
+	color: $base-color;
+}
+
+.fa-stack {
+	font-size: 0.8em;
+	color: $grey;
+	float: left;
+}
 
 /*HEADER**************************************************************************************/
 
@@ -103,7 +120,7 @@ header {
 
 .site-nav > ul > li {
 	display: inline;
-	margin: 0 40px;
+	margin: 0 30px;
 }
 
 a {
@@ -112,8 +129,15 @@ a {
 }
 
 a:hover {
-	color: #ABABAB;
+	color: $grey;
 	cursor: pointer;
+}
+
+#auth-links {
+	position: absolute;
+  top: 47px;
+  right: 0;
+  font-size: 12px;
 }
 
 
@@ -128,7 +152,7 @@ a:hover {
 }
 
 .product-nav > ul > li:hover {
-	color: #ABABAB;
+	color: $grey;
 }
 
 input {
@@ -140,12 +164,6 @@ input {
 #products {
 	width: 693px;
   margin: 0 auto;
-}
-
-#auth-links {
-	margin-top: 24px;
-	float: right;
-	width: 150px;
 }
 
 .product {
