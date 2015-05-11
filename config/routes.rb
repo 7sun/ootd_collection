@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :stockists
     resources :collections
     resources :favorites
+    post '/login'       => 'sessions#create'
+    get '/logout'       => 'sessions#destroy'
     get '/instagram'   => 'instagram#index'
     get '/currentuser' => 'users#currentuser'
   end
@@ -22,6 +24,5 @@ Rails.application.routes.draw do
   get '/login'        => 'sessions#new', as: 'login'
   post '/login'       => 'sessions#create'
   get '/logout'       => 'sessions#destroy', as: 'logout'
-  get '/welcome'      => 'home#welcome', as: 'welcome'
 
 end

@@ -7,17 +7,7 @@ angular
         $stateProvider
         	.state("home", {
         		// url: "",
-        		templateUrl: "pages/home.html",
-                controller: "homeController"
-                ,
-                resolve: {
-                    currentUser: ['usersFactory', function(usersFactory) {
-                        return usersFactory.getUser()
-                        .then(function(object){
-                            return object.data;
-                        })
-                    }]
-                }
+        		templateUrl: "pages/home.html"
         	})
             .state("contact", {
                 // url: "/contact",
@@ -79,6 +69,10 @@ angular
             .state("lookbook", {
                 // url: "/lookbook",
                 templateUrl: "lookbook/lookbook.html"
+            })
+            .state("login", {
+                templateUrl: "pages/login.html",
+                controller: "sessionsController"
             })
 
     }])

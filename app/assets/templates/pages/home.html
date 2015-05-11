@@ -35,8 +35,8 @@
 	<footer id="landing-footer">
 		<nav id="landing-nav" class="site-nav">
 			<ul>
-				<li ng-show="currentUser"><a ui-sref="products">collection</a></li>
-				<li ng-hide="currentUser"><a href="/login">collection</a></li>
+				<li ng-if="currentUser"><a ui-sref="products">collection</a></li>
+				<li ng-if="!currentUser"><a ui-sref="login">collection</a></li>
 				<li><a ui-sref="lookbook">lookbook</a></li>
 				<li><a ui-sref="about">about</a></li>
 				<li><a ui-sref="contact">contact</a></li>

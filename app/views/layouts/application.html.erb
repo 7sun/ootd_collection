@@ -9,20 +9,14 @@
 	</head>
 	<body>
 
-		<header>
+		<header ng-controller="sessionsController">
 			<div class="header-container">
 				<%= render 'logo' %>
 
 				<div id="auth-links">
-					<% if current_user %>
-						<% if current_user.is_admin? %>
-							<p><%= link_to "admin", admin_root_path %> | <%= link_to 'logout', logout_path %></p>
-						<% else %>
-							<%= current_user.email %> | <%= link_to 'logout', logout_path %>
-						<% end %>
-					<% else %>
-						<%= link_to 'Login', login_path %>
-					<% end %>
+					<p>{{currentUser}}</p>
+					<p ng-if="currentUser"><a href="#" ng-click="logout()">logout</a></p>
+					<p ng-if="!currentUser"><a ui-sref="login">login</a></p>
 				</div>
 
 				<div id="social-group">
@@ -48,15 +42,14 @@
 
 				<nav class="site-nav">
 					<ul>
-						<% if current_user %>
-							<li><a ui-sref="products" ui-sref-active="active">collection</a></li>
-						<% else %>
-							<li><a href="/login">products</a></li>
-						<% end %>
+						<li ng-if="currentUser"><a ui-sref="products" ui-sref-active="active">collection</a></li>
+						<li ng-if="!currentUser"><a ui-sref="login">collection</a></li>
 						<li><a ui-sref="lookbook" ui-sref-active="active">lookbook</a></li>
 						<li><a ui-sref="about" ui-sref-active="active">about</a></li>
 						<li><a ui-sref="contact" ui-sref-active="active">contact</a></li>
-						<li><a ui-sref="userfavorites" ui-sref-active="active"><i class="fa fa-heart-o red"></i></a></li>
+						<li ng-if="currentUser"><a ui-sref="userfavorites" ui-sref-active="active"><i class="fa 
+						fa-heart-o red"></i></a></li>
+						<li ng-if="!currentUser"><a ui-sref="login" ui-sref-active="active"><i class="fa fa-heart-o"></i></a></li>
 					</ul>
 				</nav>
 

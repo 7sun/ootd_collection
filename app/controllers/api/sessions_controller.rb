@@ -2,10 +2,10 @@ module Api
   class SessionsController < ApplicationController
 
     def create
-      user = User.find_by(username: params[:user][:username])
+      user = User.find_by(email: params[:user][:email])
       if user && user.authenticate(params[:user][:password])
         session[:user_id] = user.id
-        render json: user, only: [:id, :username], status: 200  
+        render json: user, only: [:id, :email]  
       else
         render json: {error: "Username or password is incorrect"}
       end
