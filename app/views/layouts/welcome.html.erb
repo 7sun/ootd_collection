@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="ootd">
+	<head>
+	  <title>OOTD Collection</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= javascript_include_tag 'application' %>
+	  <%= favicon_link_tag 'favicon.ico' %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+
+		<div id="main-container">
+			<%= yield %>
+		</div>
+
+	</body>
+</html>
