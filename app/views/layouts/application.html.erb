@@ -14,8 +14,7 @@
 				<%= render 'logo' %>
 
 				<div id="auth-links">
-					<p>{{currentUser.id}}</p>
-					<p ng-if="currentUser"><a href="#" ng-click="logout()">logout</a></p>
+					<p ng-if="currentUser"><span ng-if="currentUser.admin"><a href="/admin">admin</a> | </span><a href="#" ng-click="logout()">logout</a></p>
 					<p ng-if="!currentUser"><a ui-sref="login">login</a></p>
 				</div>
 

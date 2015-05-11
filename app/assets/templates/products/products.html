@@ -17,8 +17,6 @@
 
 <div class="container">
 
-<!-- <div> -->
-
 	<section class="products">
 		<div class="product alt-font repeat-animation" ng-repeat="product in products" on-finish-render="ngRepeatFinished">
 			<a ui-sref="showproduct({id: product.id })"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
@@ -26,8 +24,6 @@
 			<i ng-click="toggleFavorite($index, product.id)" id="heart-{{$index}}" class="fa fa-heart-o"></i></p>
 		</div>
 	</section>
-
-<!-- </div> -->
 
 </div>
 

@@ -15,9 +15,6 @@ angular
         $scope.jacketsArray = filterFilter($scope.products, 'jackets');
       })
 			
-
-
-
 	    // Called when the heart icon is clicked. 
 		  $scope.toggleFavorite = function(index, product){
 		  	if (window['faves' + [index]] == true){
