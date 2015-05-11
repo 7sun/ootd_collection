@@ -58,7 +58,7 @@ angular
                 // url: "/lookbook",
                 templateUrl: "lookbook/lookbook.html"
             })
-            .state("login", {
+            .state("home.login", {
                 templateUrl: "pages/login.html",
                 controller: "sessionsController"
             })

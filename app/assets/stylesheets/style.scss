@@ -120,12 +120,6 @@ a {
 	}
 }
 
-form {
-	width: 174px;
-  margin: 0 auto;
-  margin-bottom: 2em;
-}
-
 .red {
 	color: red;
 }
@@ -147,6 +141,7 @@ form {
 
 #landing-cover {
   background-color: #2C2416;
+  background-color: #010101;
   position: absolute;
   top: 0;
   left: 0;
@@ -154,6 +149,23 @@ form {
   z-index: 999999;
   height: 100vh;
   padding-top: 30vh;
+ }
+
+ #landing-video {
+ 	position: fixed;
+ 	right: 0;
+ 	bottom: 0;
+ 	min-width: 100%;
+ 	min-height: 100%;
+ 	width: auto;
+ 	height: auto;
+ 	background-size: cover;
+ 	// z-index: 99999;
+ }
+
+ .svg-wrap {
+ 	position: relative;
+ 	z-index: 9999999;
  }
 
  #landing-footer {
@@ -165,8 +177,43 @@ form {
  #landing-nav {
  	position: relative;
  	left: -50%;
+ 	a {
+ 		color: #FDFDFD;
+ 		&:hover {
+ 			color: $grey;
+ 		}
+ 	}
  }
 
+ .login {
+ 	position: relative;
+ 	z-index: 9999999;
+ }
+
+ form {
+  margin-top: 4em;
+}
+
+input {
+	border: none;
+	border-radius: 2px;
+	height: 2em;
+	width: 19em;
+	padding-left: 0.5em;
+	outline: $grey;
+	display: block;
+	margin: 0 auto 1em;
+	&:focus {
+		box-shadow: 0px 0px 0px 2px #C4B3BC;
+	}
+}
+
+#login-button {
+	border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+}
 
 /*HEADER**************************************************************************************/
 
@@ -245,10 +292,10 @@ nav {
 	}
 }
 
-input {
-	display: block;
-	margin-bottom: 1em;
-}
+// input {
+// 	display: block;
+// 	margin-bottom: 1em;
+// }
 
 .products {
 	width: 852px;
