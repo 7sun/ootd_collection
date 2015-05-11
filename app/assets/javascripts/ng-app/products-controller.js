@@ -1,8 +1,8 @@
 angular
 	.module("ootd")
-  .controller("productsController", ['allProducts', 'currentUser', 'filterFilter', '$scope', '$http', '$timeout', function(allProducts, currentUser, filterFilter, $scope, $http, $timeout){
+  .controller("productsController", ['allProducts', '$rootScope', 'filterFilter', '$scope', '$http', '$timeout', function(allProducts, $rootScope, filterFilter, $scope, $http, $timeout){
 
-      var currentUser = currentUser;
+      var currentUser = $rootScope.currentUser;
       $scope.products = [];
       $timeout(function(){
         $scope.products = allProducts;
@@ -28,6 +28,7 @@ angular
 		  		createFavorite(index, product);
 		  			// Call the current user API again to ensure the favorites list includes the newly created favorite
 		  			$http.get('/api/currentuser').success(function(data){
+              $rootScope.currentUser = data;
 		  				currentUser = data;
 		  				checkForFavorite();
 		  			})

@@ -1,10 +1,10 @@
 angular
 	.module("ootd")
-  .controller("showProductController", ['currentUser', 'showProduct', '$scope', '$http', '$resource', '$stateParams', '$timeout', function(currentUser, showProduct, $scope, $http, $resource, $stateParams, $timeout){
+  .controller("showProductController", ['$rootScope', 'showProduct', '$scope', '$http', '$resource', '$stateParams', '$timeout', function($rootScope, showProduct, $scope, $http, $resource, $stateParams, $timeout){
 
 	  var Favorite = $resource('api/favorites/:id', {id:'@id'});
 	  var userFavorited;
-	  $scope.currentUser = currentUser;
+	  var currentUser = $rootScope.currentUser;
 	  $scope.product = showProduct;
 
 	  $timeout(function(){
@@ -57,7 +57,7 @@ angular
   		}
   		else {
     		for(var i = 0; i < favs.length; i++) {
-    			if(favs[i].user_id == $scope.currentUser.id){
+    			if(favs[i].user_id == currentUser.id){
     				console.log("The current user has favorited this product");
     				$(".heart").addClass("red");
     				userFavorited = true;

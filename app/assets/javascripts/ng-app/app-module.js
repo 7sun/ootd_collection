@@ -32,12 +32,6 @@ angular
                         .then(function(object){
                             return object.data.products;
                         })
-                    }],
-                    currentUser: ['usersFactory', function(usersFactory) {
-                        return usersFactory.getUser()
-                        .then(function(object){
-                            return object.data;
-                        })
                     }]
                 }
         	})
@@ -47,12 +41,6 @@ angular
         		controller: "showProductController",
                 params: {id: null},
                 resolve: {
-                    currentUser: ['usersFactory', function(usersFactory) {
-                        return usersFactory.getUser()
-                        .then(function(object){
-                            return object.data;
-                        })
-                    }],
                     showProduct: ['productsFactory', '$stateParams', function(productsFactory, $stateParams) {
                         return productsFactory.getProduct($stateParams.id)
                         .then(function(object){
