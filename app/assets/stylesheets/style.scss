@@ -140,7 +140,8 @@ a {
 /*LANDING PAGE**************************************************************************************/
 
 #landing-cover {
-  background-color: #2C2416;
+	color: $base-color;
+  // background-color: #2C2416;
   background-color: #010101;
   position: absolute;
   top: 0;
@@ -149,9 +150,28 @@ a {
   z-index: 999999;
   height: 100vh;
   padding-top: 30vh;
+  i {
+  	z-index: 9999999;
+  	&#volume {
+  		font-size: 1.5em;
+  		position: absolute;
+  		top: 1em;
+  		right: 1.5em;
+  	}
+  }
+  .social-group {
+  	font-size: 1.5em;
+  	top: 1em;
+  	left: 1.5em;
+  	z-index: 9999999;
+  	i {
+  		margin-right: 0.5em;
+  	}
+  }
+
  }
 
- #landing-video {
+ #hero-video {
  	position: fixed;
  	right: 0;
  	bottom: 0;
@@ -266,7 +286,7 @@ nav {
   font-size: 12px;
 }
 
-#social-group {
+.social-group {
 	position: absolute;
   top: 28px;
 }
