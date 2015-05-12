@@ -1,11 +1,15 @@
 /*VARIABLES *****************************************************************************/
 
 $base-color: #FDFDFD;
-// $base-font-color: #010101;
+$black: #010101;
 $base-font-color: #635959;
 $grey: #C4B3BC;
 $dark-grey: #635959;
 $base-font-size: 16px;
+$content-width: 1000px;
+$top-level: 999999;
+$high-level: 99999;
+$mid-level: 9999;
 
 
 /*CLEARFIX *****************************************************************************/
@@ -57,7 +61,7 @@ html {
 	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 	// constantia for links
 	// style_nums and product description aparajita
-	background-color: #FDFDFD;
+	background-color: $base-color;
 	color: $base-font-color;
 	font-size: $base-font-size;
 }
@@ -71,11 +75,11 @@ body {
 }
 
 #main-container {
-	padding-top: 120px;
+	padding-top: 7.5em;
 }
 
 .container {
-	width: 1000px;
+	width: $content-width;
 	padding-top: 3em;
 	@include outer-container;
 }
@@ -91,7 +95,7 @@ body {
 #col-3 {
 	@include span-columns(3);
 	display: table;
-	height: 600px;
+	height: 37.5em;
 }
 
 ul {
@@ -134,81 +138,76 @@ a {
 }
 
 .sub-header.shadow {
-	box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0.188em 0.5em -0.125em rgba(0, 0, 0, 0.4);
 }
 
 /*LANDING PAGE**************************************************************************************/
 
 #landing-cover {
 	color: $base-color;
-  // background-color: #2C2416;
-  background-color: #010101;
+  background-color: $black;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999999;
+  z-index: $high-level;
   height: 100vh;
   padding-top: 30vh;
-  i {
-  	z-index: 9999999;
-  	&#volume {
-  		font-size: 1.5em;
-  		position: absolute;
-  		top: 1em;
-  		right: 1.5em;
-  	}
-  }
+	#volume {
+		z-index: $top-level;
+		font-size: 1.5em;
+		position: absolute;
+		top: 1em;
+		right: 1.5em;
+	}
   .social-group {
   	font-size: 1.5em;
   	top: 1em;
   	left: 1.5em;
-  	z-index: 9999999;
+  	z-index: $top-level;
   	i {
   		margin-right: 0.5em;
   	}
   }
+}
 
- }
+#hero-video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	background-size: cover;
+}
 
- #hero-video {
- 	position: fixed;
- 	right: 0;
- 	bottom: 0;
- 	min-width: 100%;
- 	min-height: 100%;
- 	width: auto;
- 	height: auto;
- 	background-size: cover;
- 	// z-index: 99999;
- }
+.svg-wrap {
+position: relative;
+	z-index: $top-level;
+}
 
- .svg-wrap {
- 	position: relative;
- 	z-index: 9999999;
- }
+#landing-footer {
+	position: fixed;
+	bottom: 3em;
+	left: 50%;
+}
 
- #landing-footer {
- 	position: fixed;
-  bottom: 3em;
-  left: 50%;
- }
+#landing-nav {
+	position: relative;
+	left: -50%;
+	a {
+		color: $base-color;
+		&:hover {
+			color: $grey;
+		}
+	}
+}
 
- #landing-nav {
- 	position: relative;
- 	left: -50%;
- 	a {
- 		color: #FDFDFD;
- 		&:hover {
- 			color: $grey;
- 		}
- 	}
- }
-
- .login {
- 	position: relative;
- 	z-index: 9999999;
- }
+.login {
+	position: relative;
+	z-index: $top-level;
+}
 
  form {
   margin-top: 4em;
@@ -216,7 +215,7 @@ a {
 
 input {
 	border: none;
-	border-radius: 2px;
+	border-radius: 0.125em;
 	height: 2em;
 	width: 19em;
 	padding-left: 0.5em;
@@ -225,7 +224,7 @@ input {
 	margin: 0 auto 1em;
 	background-color: $base-color;
 	&:focus {
-		box-shadow: 0px 0px 0px 2px #C4B3BC;
+		box-shadow: 0 0 0 0.125em $grey;
 	}
 }
 
@@ -245,12 +244,12 @@ input {
 }
 
 header {
-	width: 1000px;
+	width: $content-width;
 	margin: 0 auto;
 }
 
 .header-container {
-	z-index: 99999;
+	z-index: $mid-level;
 	padding: 1em 0;
 	position: fixed;
 	width: inherit;
@@ -262,7 +261,7 @@ nav {
 	margin: 0.2em 0;
 	li {
 		display: inline;
-		margin: 0 30px;
+		margin: 0 1.875em;
 	}
 }
 
@@ -270,7 +269,7 @@ nav {
 	width: 100%;
 	background-color: $grey;
 	position: fixed;
-	z-index: 99999;
+	z-index: $mid-level;
 	min-height: .5em;
 	@include transition(all 0.2s linear);
 }
@@ -281,14 +280,14 @@ nav {
 
 #auth-links {
 	position: absolute;
-  top: 31px;
+  top: 1.938em;
   right: 0;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 .social-group {
 	position: absolute;
-  top: 28px;
+  top: 1.75em;
 }
 
 .social {
@@ -331,7 +330,7 @@ nav {
 		margin: 0em 2.5em 1em;
 	}
 	p {
-		width: 135px;
+		width: 8.438em;
 	  margin: 0 auto;
 	  text-align: left;
 	  i {
@@ -345,13 +344,13 @@ nav {
 }
 
 .fade-footer {
-	z-index: 99999;
+	z-index: $mid-level;
 	position: fixed;
 	width: 100%;
 	bottom: 0;
-	height: 33px;
+	height: 2.063em;
   width: 100%;
-  background: -webkit-linear-gradient( bottom , #FDFDFD 50%, rgba(255, 255, 255, 0));
+  background: -webkit-linear-gradient( bottom , $base-color 50%, rgba(255, 255, 255, 0));
 }
 
 
@@ -377,7 +376,7 @@ nav {
 
 .product-thumbs {
 	height: 190px;
-	margin-bottom: 15px;
+	margin-bottom: 0.938em;
 	display: block;
 	&:last-child {
 		margin-bottom: 0;
@@ -391,8 +390,8 @@ nav {
 .show-heart {
 	font-size: 1.3em;
 	position: absolute;
-	right: 50px;
-	top: 6px;
+	right: 3.125em;
+	top: 0.375em;
 }
 
 /*STATIC PAGES******************************************************************************/
