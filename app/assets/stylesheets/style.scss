@@ -1,12 +1,10 @@
 /*VARIABLES *****************************************************************************/
 
 $base-color: #FDFDFD;
-$black: #010101;
 $base-font-color: #635959;
+$black: #010101;
 $grey: #C4B3BC;
 $dark-grey: #635959;
-$base-font-size: 16px;
-$content-width: 1000px;
 $top-level: 999999;
 $high-level: 99999;
 $mid-level: 9999;
@@ -63,7 +61,7 @@ html {
 	// style_nums and product description aparajita
 	background-color: $base-color;
 	color: $base-font-color;
-	font-size: $base-font-size;
+	font-size: 16px;
 }
 
 *, *:before, *:after {
@@ -79,7 +77,7 @@ body {
 }
 
 .container {
-	width: $content-width;
+	width: 1000px;
 	padding-top: 3em;
 	@include outer-container;
 }
@@ -159,7 +157,7 @@ a {
 		position: absolute;
 		top: 1em;
 		right: 1.5em;
-	}
+	}	
   .social-group {
   	font-size: 1.5em;
   	top: 1em;
@@ -244,7 +242,7 @@ input {
 }
 
 header {
-	width: $content-width;
+	width: 1000px;
 	margin: 0 auto;
 }
 
@@ -280,7 +278,7 @@ nav {
 
 #auth-links {
 	position: absolute;
-  top: 1.938em;
+  top: 2.75em;
   right: 0;
   font-size: 0.75em;
 }
@@ -399,3 +397,74 @@ nav {
 .contact-container {
 	margin-top: 1em;
 }
+
+
+
+/*MEDIA QUERIES******************************************************************************/
+
+
+@media only screen and (max-width: 1024px) {
+	
+	header, .container {
+		width: 95%;
+	}
+
+}
+
+@media only screen and (max-width: 900px) {
+
+		.products {
+		width: 720px;
+		img {
+			height: 240px;
+		}
+		.product {
+			height: 21em;
+			p {
+				width: 160px;
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width: 760px) {
+	// Change to menu icon format
+	.products {
+		width: 560px;
+		img {
+			height: 300px;
+		}
+		.product {
+			height: 25em;
+			p {
+				width: 200px;
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	
+	.products {
+		width: 91vw;
+		img {
+			height: 50vw;
+			margin: 0 6vw 0.5em;
+		}
+		.product {
+			height: 66vw;
+			p {
+				width: 33.5vw;
+			}
+		}
+	}
+
+
+}
+
+
+
+
+
