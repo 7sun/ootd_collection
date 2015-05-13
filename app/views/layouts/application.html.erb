@@ -10,58 +10,6 @@
 	  <!-- <meta name="viewport" content="maximum-scale=1"> -->
 	</head>
 	<body>
-
-		<header ng-controller="sessionsController">
-			<div class="header-container">
-				<%= render 'logo' %>
-
-				<div id="auth-links">
-					<p ng-if="currentUser"><span ng-if="currentUser.admin"><a href="/admin">admin</a> | </span><a href="#" ng-click="logout()">logout</a></p>
-					<p ng-if="!currentUser"><a ui-sref="home.login">login</a></p>
-				</div>
-
-				<div class="social-group">
-					<a href="http://facebook.com" target="_blank">
-						<span class="fa-stack fa-lg">
-						  <i class="fa fa-circle fa-stack-2x"></i>
-						  <i class="social fa fa-facebook fa-stack-1x"></i>
-						</span>
-					</a>
-					<a href="https://instagram.com/ootd.collection/" target="_blank">
-						<span class="fa-stack fa-lg">
-						  <i class="fa fa-circle fa-stack-2x"></i>
-						  <i class="social fa fa-instagram fa-stack-1x"></i>
-						</span>
-					</a>
-					<a href="https://twitter.com" target="_blank">
-						<span class="fa-stack fa-lg">
-						  <i class="fa fa-circle fa-stack-2x"></i>
-						  <i class="social fa fa-twitter fa-stack-1x"></i>
-						</span>
-					</a>
-				</div>
-
-				<nav class="site-nav">
-					<ul>
-						<li ng-if="currentUser"><a ui-sref="products" ui-sref-active="active">collection</a></li>
-						<li ng-if="!currentUser"><a ui-sref="home.login">collection</a></li>
-						<li><a ui-sref="lookbook" ui-sref-active="active">lookbook</a></li>
-						<li><a ui-sref="about" ui-sref-active="active">about</a></li>
-						<li><a ui-sref="contact" ui-sref-active="active">contact</a></li>
-						<li ng-if="currentUser"><a ui-sref="userfavorites" ui-sref-active="active"><i class="fa 
-						fa-heart-o red"></i></a></li>
-						<li ng-if="!currentUser"><a ui-sref="home.login" ui-sref-active="active"><i class="fa fa-heart-o"></i></a></li>
-					</ul>
-				</nav>
-
-			</div>
-
-
-		</header>
-
-		<div id="main-container">
-			<%= yield %>
-		</div>
-
+		<%= yield %>
 	</body>
 </html>

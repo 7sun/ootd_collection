@@ -46,11 +46,11 @@
 	<footer id="landing-footer">
 		<nav id="landing-nav" class="site-nav">
 			<ul>
-				<li ng-if="currentUser"><a ui-sref="products">collection</a></li>
+				<li ng-if="currentUser"><a ui-sref="main.products">collection</a></li>
 				<li ng-if="!currentUser"><a ui-sref=".login">collection</a></li>
-				<li><a ui-sref="lookbook">lookbook</a></li>
-				<li><a ui-sref="about">about</a></li>
-				<li><a ui-sref="contact">contact</a></li>
+				<li><a ui-sref="main.lookbook">lookbook</a></li>
+				<li><a ui-sref="main.about">about</a></li>
+				<li><a ui-sref="main.contact">contact</a></li>
 			</ul>
 		</nav>
 	</footer>

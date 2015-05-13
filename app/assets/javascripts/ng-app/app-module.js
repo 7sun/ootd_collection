@@ -5,24 +5,31 @@ angular
           $('meta[name=csrf-token]').attr('content');
 
         $stateProvider
-        	.state("home", {
-        		// url: "",
-        		templateUrl: "pages/home.html"
-        	})
-            .state("contact", {
+            .state("home", {
+                // url: "",
+                templateUrl: "pages/home.html"
+            })
+            .state("home.login", {
+                templateUrl: "pages/login.html",
+                controller: "sessionsController"
+            })
+            .state("main", {
+                templateUrl: "pages/main.html"
+            })
+            .state("main.contact", {
                 // url: "/contact",
                 templateUrl: "pages/contact.html"
             })
-            .state("about", {
+            .state("main.about", {
                 // url: "/about",
                 templateUrl: "pages/about.html"
             })
-            .state("stockists", {
+            .state("main.stockists", {
                 // url:"/stockists",
                 templateUrl: "stockists/stockists.html",
                 controller: "stockistsController"
             })
-        	.state("products", {
+        	.state("main.products", {
         		// url:"/products",
         		templateUrl: "products/products.html",
         		controller: "productsController",
@@ -35,7 +42,7 @@ angular
                     }]
                 }
         	})
-        	.state("showproduct", {
+        	.state("main.showproduct", {
         		// url:"/products/:id",
         		templateUrl: "products/showproduct.html",
         		controller: "showProductController",
@@ -49,18 +56,14 @@ angular
                     }]
                 }
         	})
-            .state("userfavorites", {
+            .state("main.userfavorites", {
                 // url: "/favorites",
                 templateUrl: "favorites/favorites.html",
                 controller: "favoritesController"
             })
-            .state("lookbook", {
+            .state("main.lookbook", {
                 // url: "/lookbook",
                 templateUrl: "lookbook/lookbook.html"
-            })
-            .state("home.login", {
-                templateUrl: "pages/login.html",
-                controller: "sessionsController"
             })
 
     }])
