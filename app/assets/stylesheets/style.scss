@@ -143,8 +143,11 @@ a {
 
 #landing-container {
 	color: $base-color;
-  background-color: $black;
+  background: url("https://c1.staticflickr.com/9/8452/8012322966_d712f08b0a_b.jpg");
+  background-size: cover;
   height: 100vh;
+  width: 100%;
+  position: fixed;
 	#volume {
 		z-index: $top-level;
 		font-size: 1.5em;
@@ -165,7 +168,7 @@ a {
 
 #hero-video {
 	position: fixed;
-	right: 0;
+	left: 0;
 	bottom: 0;
 	min-width: 100%;
 	min-height: 100%;
@@ -180,7 +183,7 @@ a {
 }
 
 .svg-wrap {
-position: relative;
+	position: relative;
 	z-index: $top-level;
 }
 
@@ -208,10 +211,12 @@ position: relative;
 }
 
  form {
-  margin-top: 4em;
+ 	position: relative;
+  margin: 4em 0;
 }
 
 input {
+	color: $black;
 	border: none;
 	border-radius: 0.125em;
 	height: 2em;
@@ -224,6 +229,10 @@ input {
 	&:focus {
 		box-shadow: 0 0 0 0.125em $grey;
 	}
+}
+
+.back-button {
+	padding-bottom: 50em;
 }
 
 #login-button {
@@ -460,7 +469,8 @@ nav {
 	}
 
 	#landing-footer {
-		bottom: 8em;
+		margin-top: 50px;
+		bottom: initial;
 	}
 
 	#landing-nav {
@@ -479,6 +489,9 @@ nav {
 	}
 
 	#landing-container {
+		input {
+			width: 70vw;
+		}
 		.social-group {
 			display: none;
 		}

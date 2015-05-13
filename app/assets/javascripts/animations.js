@@ -8,7 +8,7 @@ $(window).scroll(function() {
         $(".header-container").css({
             'padding' : "1em 0 0"
         });
-        $(".site-nav").hide();
+        $("#main-nav").hide();
     }
     else {
         $(".sub-header").removeClass("shadow");
@@ -20,7 +20,7 @@ $(window).scroll(function() {
         $(".header-container").css({
             'padding' : "1em 0"
         });
-        $(".site-nav").show();
+        $("#main-nav").show();
         // console.log("show menu");
     }
 });

@@ -7,4 +7,11 @@ $(function(){
 		});
 	})
 
+	$("#hero-video").bind("ended", function() {
+  	$(this).hide();
+  	$("#landing-container").hide();
+  	$("#landing-container").fadeIn(3000);
+
+	});
+
 })

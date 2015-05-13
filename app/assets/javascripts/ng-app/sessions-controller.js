@@ -20,7 +20,7 @@ angular
   	          $rootScope.currentUser = data;
   	          console.log($scope.currentUser);
   	          console.log("logged in!");
-  	          $state.go("products");
+  	          $state.go("main.products");
   	        }
   	      });
   	    }
