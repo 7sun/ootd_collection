@@ -141,7 +141,7 @@ a {
 
 /*LANDING PAGE**************************************************************************************/
 
-#landing-cover {
+#landing-container {
 	color: $base-color;
   background-color: $black;
   // height: 100vh;
@@ -460,8 +460,7 @@ nav {
 	}
 
 	#landing-footer {
-		margin-top: 20vh;
-		position: relative;
+		bottom: 8em;
 	}
 
 	#landing-nav {
@@ -479,7 +478,7 @@ nav {
 		display: none;
 	}
 
-	#landing-cover {
+	#landing-container {
 		.social-group {
 			display: none;
 		}
