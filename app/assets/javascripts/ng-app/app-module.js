@@ -7,7 +7,8 @@ angular
         $stateProvider
             .state("home", {
                 // url: "",
-                templateUrl: "pages/home.html"
+                templateUrl: "pages/home.html",
+                controller: "sessionsController"
             })
             .state("home.login", {
                 templateUrl: "pages/login.html",

@@ -73,12 +73,12 @@ body {
 }
 
 #main-container {
-	padding-top: 7.5em;
+	padding-top: 4.5em;
 }
 
 .container {
 	width: 1000px;
-	padding-top: 3em;
+	padding-top: 2em;
 	@include outer-container;
 }
 
@@ -126,6 +126,10 @@ a {
 	color: red;
 }
 
+.fa-play {
+	font-size: 0.5em;
+}
+
 .active {
 	color: $base-font-color;
 }
@@ -143,7 +147,7 @@ a {
 
 #landing-container {
 	color: $base-color;
-  background: url("https://c1.staticflickr.com/9/8452/8012322966_d712f08b0a_b.jpg");
+  background: url("http://l.rgbimg.com/cache1nHiA3/users/s/su/sundstrom/600/mienHgo.jpg");
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -184,7 +188,7 @@ a {
 
 .svg-wrap {
 	position: relative;
-	z-index: $top-level;
+	z-index: $high-level;
 }
 
 #landing-footer {
@@ -232,6 +236,7 @@ input {
 }
 
 .back-button {
+	display: none;
 	padding-bottom: 50em;
 }
 
@@ -245,7 +250,7 @@ input {
 /*HEADER**************************************************************************************/
 
 #logo-main {
-  margin: 0 auto 1em;
+  // margin: 0 auto 1em;
   position: relative;
   display: inline-block;
 }
@@ -256,8 +261,8 @@ header {
 }
 
 .header-container {
-	z-index: $mid-level;
-	padding: 1em 0;
+	z-index: $high-level;
+	height: 132px;
 	position: fixed;
 	width: inherit;
 	background-color: $base-color;
@@ -270,6 +275,10 @@ nav {
 		display: inline;
 		margin: 0 1.875em;
 	}
+}
+
+#main-nav {
+	margin: 1em 0 0;
 }
 
 .sub-header {
@@ -286,6 +295,7 @@ nav {
 }
 
 #auth-links {
+	z-index: $top-level;
 	position: absolute;
   top: 2.75em;
   right: 0;
@@ -293,6 +303,7 @@ nav {
 }
 
 .social-group {
+	z-index: $top-level;
 	position: absolute;
   top: 1.75em;
 }
@@ -320,9 +331,13 @@ nav {
 	}
 }
 
+#mobile-product-nav {
+	display: none;
+}
+
 .products {
 	width: 852px;
-  margin: 0 auto;
+  margin: 1em auto 0;
 }
 
 .product {
@@ -435,8 +450,38 @@ nav {
 @media only screen and (max-width: 760px) {
 	// Change to menu icon format
 	html {
-		font-size: 20px;
+		font-size: 18px;
 	}
+
+	.header-container {
+		height: 87px;
+	}
+
+	#logo-main {
+		float: left;
+		width: 140px;
+	}
+
+	#main-social-group {
+		display: none;
+	}
+
+	#auth-links {
+		display: none;
+	}
+
+	#main-container {
+		padding-top: 1.5em;
+	}
+
+	#mobile-product-nav {
+		display: initial;
+	}
+
+	#main-product-nav {
+		display: none;
+	}
+
 	.products {
 		width: 560px;
 		img {
@@ -445,6 +490,7 @@ nav {
 		.product {
 			height: 400px;
 			p {
+				font-size: .88em;
 				width: 200px;
 			}
 		}
@@ -480,12 +526,20 @@ nav {
 		}
 	}
 
+	#hero-video {
+		display: none;
+	}
+
 	#logo-landing {
 		margin-top: 10vh;
 	}
 
 	#volume {
 		display: none;
+	}
+
+	.back-button {
+		display: block;
 	}
 
 	#landing-container {
