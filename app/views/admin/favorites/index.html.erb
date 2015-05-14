@@ -1,17 +1,19 @@
 <%= render 'adminheader' %>
 
-<h2>Most Popular</h2>
+<div class="admin-container">
+	<h2>Most Popular</h2>
 
-<% @sorted.each do |p| %>
-	<% if p.favorited_users.count > 0 %>
-		<p><%= p.style_num %>: <%= p.favorited_users.count %></p>
-		<p>Favorited by:
-			<% names = [] %>
-			<% p.favorited_users.each do |f| %>
-				<% names << f.fullname %>
-			<% end %>
-			<em><%= names.join(", ") %></em>
-		</p>
-		<br>
+	<% @sorted.each do |p| %>
+		<% if p.favorited_users.count > 0 %>
+			<p><%= p.style_num %>: <%= p.favorited_users.count %></p>
+			<p>Favorited by:
+				<% names = [] %>
+				<% p.favorited_users.each do |f| %>
+					<% names << f.fullname %>
+				<% end %>
+				<em><%= names.join(", ") %></em>
+			</p>
+			<br>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
