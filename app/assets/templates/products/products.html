@@ -47,7 +47,7 @@
 <script>
 	
 	$(function(){
-		$('.js-accordion-trigger').bind('click', function(e){
+		$('.js-accordion-trigger, .submenu').bind('click', function(e){
 			$('.fa-play').toggleClass('fa-rotate-90 fa-rotate-270');
 		  jQuery(this).parent().find('.submenu').slideToggle('fast');  // apply the toggle to the ul
 		  jQuery(this).parent().toggleClass('is-expanded');

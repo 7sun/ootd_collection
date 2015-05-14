@@ -454,12 +454,13 @@ nav {
 	}
 
 	.header-container {
-		height: 87px;
+		height: 60px;
 	}
 
 	#logo-main {
 		float: left;
 		width: 140px;
+		padding-top: 10px;
 	}
 
 	#main-social-group {
@@ -471,7 +472,11 @@ nav {
 	}
 
 	#main-container {
-		padding-top: 1.5em;
+		padding-top: 0;
+	}
+
+	#main-nav {
+		margin: 0;
 	}
 
 	#mobile-product-nav {
