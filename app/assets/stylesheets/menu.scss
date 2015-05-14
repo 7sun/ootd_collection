@@ -2,12 +2,12 @@
   $base-border-radius: 3px !default;
   $dark-gray: #333 !default;
   $large-screen: 760px !default;
-  $base-font-color: $dark-gray !default;
+  // $base-font-color: $grey !default;
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
   // $centered-navigation-background: $base-color;
-  $centered-navigation-color: transparentize($base-font-color, 0.3);
-  $centered-navigation-color-hover: $base-font-color;
+  $centered-navigation-color: $grey;
+  $centered-navigation-color-hover: $grey;
   $centered-navigation-height: 60px;
   $centered-navigation-item-padding: 1em;
   $centered-navigation-submenu-padding: 1em;
@@ -42,14 +42,17 @@
 
   .centered-navigation-mobile-menu {
     color: $centered-navigation-color;
-    display: block;
-    float: right;
-    font-weight: 700;
-    line-height: $centered-navigation-height;
-    margin: 0;
-    padding-right: $centered-navigation-submenu-padding;
-    text-decoration: none;
-    text-transform: uppercase;
+    // display: block;
+    // float: right;
+    // font-weight: 700;
+    // line-height: $centered-navigation-height;
+    // margin: 0;
+    // padding-right: $centered-navigation-submenu-padding;
+    // text-decoration: none;
+    // text-transform: uppercase;
+    position: absolute;
+    right: 2px;
+    top: -2px;
 
     @include media ($horizontal-bar-mode) {
       display: none;
@@ -74,11 +77,19 @@
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
     display: none;
-    margin: 0 auto;
+    margin: -5px auto;
     overflow: visible;
-    padding: 0;
+    padding: 1em 0;
     width: 100%;
     z-index: 99999;
+    background-color: $base-color;
+    box-shadow: 0px 5px 7px -4px #888;
+    @include media ($large-screen) {
+      margin: 0 auto;
+      padding: 0;
+      box-shadow: none;
+      background-color: transparent;
+    }
 
     &.show {
       display: block;
@@ -103,8 +114,8 @@
     display: block;
     line-height: $centered-navigation-height;
     overflow: hidden;
-    padding-right: $centered-navigation-submenu-padding;
-    text-align: right;
+    // padding-right: $centered-navigation-submenu-padding;
+    // text-align: right;
     width: 100%;
     margin: 0;
 
@@ -121,6 +132,7 @@
     }
 
     @include media($horizontal-bar-mode) {
+      margin: 0 1.875em;
       background: transparent;
       display: inline;
       line-height: $centered-navigation-height;
