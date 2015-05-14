@@ -219,26 +219,27 @@ a {
 	z-index: $top-level;
 }
 
- form {
+ .landing-form {
  	position: relative;
   margin: 4em 0;
+  input {
+  	color: $black;
+  	border: none;
+  	border-radius: 0.125em;
+  	height: 2em;
+  	width: 19em;
+  	padding-left: 0.5em;
+  	outline: $grey;
+  	display: block;
+  	margin: 0 auto 1em;
+  	background-color: $base-color;
+  	&:focus {
+  		box-shadow: 0 0 0 0.125em $grey;
+  	}
+  }
 }
 
-input {
-	color: $black;
-	border: none;
-	border-radius: 0.125em;
-	height: 2em;
-	width: 19em;
-	padding-left: 0.5em;
-	outline: $grey;
-	display: block;
-	margin: 0 auto 1em;
-	background-color: $base-color;
-	&:focus {
-		box-shadow: 0 0 0 0.125em $grey;
-	}
-}
+
 
 .back-button {
 	display: none;
@@ -349,6 +350,7 @@ nav {
 	float: left;
 	height: 304px;
 	img {
+		height: 200px;
 		margin: 0em 40px 16px;
 	}
 	p {
@@ -420,6 +422,43 @@ nav {
 
 .contact-container {
 	margin-top: 1em;
+}
+
+/*ADMIN PAGES******************************************************************************/
+
+#admin-header {
+	position: fixed;
+	width: 100%;
+	background-color: $base-color;
+	a {
+		display: block;
+  	margin: 1em;
+	}
+}
+
+.admin-container {
+	width: 1000px;
+	margin: 100px auto;
+	@media only screen and (max-width: 1000px) {
+		width: 50%;
+	}
+	.form-container {
+		width: 300px;
+		margin: 0 auto;
+	}
+	form {
+		text-align: left;
+		select {
+			margin-bottom: 0.5em;
+		}
+		input {
+			width: 300px;
+			display: block;
+			margin-bottom: 1em;
+			padding: 0.2em;
+			border-radius: 3px; 
+		}
+	}
 }
 
 

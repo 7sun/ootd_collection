@@ -1,15 +1,20 @@
-<%= form_for ([:admin, @product]) do |f| %>
-	<%= f.collection_select(:collection_id, Collection.all, :id, :name )%>
-	<br>
-	<%= f.select :category, [['Tops'],['Pants'],['Skirts'],['Dresses'],['Jackets']] %>
-	<%= f.text_field :style, placeholder: 'Style' %>
-	<%= f.text_field :style_num, placeholder: 'Style #' %>
-	<%= f.text_field :color, placeholder: 'Color' %>
-	<%= f.text_field :materials, placeholder: 'Materials' %>
-	<%= f.text_field :description, placeholder: 'Description' %>
-	<%= f.fields_for :images do |image| %>
-		<%= image.file_field :source %>
-		<%= image.text_field :description %>
+<div class="form-container">
+	<%= form_for ([:admin, @product]) do |f| %>
+		Collection: <%= f.collection_select(:collection_id, Collection.all, :id, :name )%>
+		<br>
+		Category: <%= f.select :category, [['Tops'],['Pants'],['Skirts'],['Dresses'],['Jackets']] %>
+		<%#= f.text_field :style, placeholder: 'Style' %>
+		<%= f.text_field :style_num, placeholder: 'Style #' %>
+		<%#= f.text_field :color, placeholder: 'Color' %>
+		<%= f.text_field :materials, placeholder: 'Materials' %>
+		<%= f.text_field :description, placeholder: 'Description' %>
+		<br>
+		<p>Image Uploads</p>
+		<%= f.fields_for :images do |image| %>
+			<%= image.file_field :source %>
+			<%= image.select :description, [['front'], ['side'], ['back']] %>
+			<br><br>	
+		<% end %>
+		<%= f.submit 'Submit' %>
 	<% end %>
-	<%= f.submit 'Submit' %>
-<% end %>
+</div>

@@ -4,4 +4,5 @@ class Product < ActiveRecord::Base
   has_many :favorited_users, through: :favorites, source: :user
   has_many :images
   accepts_nested_attributes_for :images
+  validates :style_num, presence: true, uniqueness: true
 end

@@ -1,6 +1,9 @@
-<h2>Admin Control Panel</h2>
-<p><%= link_to 'Users', admin_users_path %></p>
-<p><%= link_to 'Most Popular', admin_favorites_path %></p>
-<p><%= link_to 'Products', admin_products_path %></p>
-<p><%= link_to 'Collections', admin_collections_path %></p>
-<p><%= link_to 'Stockists', admin_stockists_path %></p>
+<%= render 'adminheader' %>
+<div class="admin-container">
+  <h2>Admin Control Panel</h2>
+  <p><%= link_to 'Users', admin_users_path %></p>
+  <p><%= link_to 'Most Popular', admin_favorites_path %></p>
+  <p><%= link_to 'Products', admin_products_path %></p>
+  <p><%= link_to 'Collections', admin_collections_path %></p>
+  <p><%= link_to 'Stockists', admin_stockists_path %></p>
+</div>

@@ -1,9 +1,14 @@
-<h2>Products</h2>
-<%= link_to "Add New", new_admin_product_path %>
-<% @products.each do |product| %>
-	<div class="product">
-		<%= image_tag product.images.first.source.small %>
-		<h3><%= link_to product.style, admin_product_path(product.id) %></h3>	
-		<p><%= product.style_num %></p>
-	</div>
-<% end %>
+<%= render 'adminheader' %>
+
+<div class="admin-container">
+  <h2>Products</h2>
+  <button><%= link_to "Add New", {action: "new" }, method: :get %></button>
+  <br>
+  <br>
+  <% @products.each do |product| %>
+  	<div class="product">
+  		<%= image_tag product.images.first.source.thumb %>
+  		<p><%= link_to product.style_num, admin_product_path(product.id) %></p>
+  	</div>
+  <% end %>
+</div>

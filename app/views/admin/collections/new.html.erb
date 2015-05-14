@@ -1,3 +1,5 @@
+<%= render 'adminheader' %>
+
 <h2>Add New Collection</h2>
 <%= form_for ([:admin, @collection]) do |f| %>
 	<%= f.select :name, [['Fall 2016'],['Winter 2016'],['Spring 2017'],['Summer 2017'],['Fall 2017']] %>
