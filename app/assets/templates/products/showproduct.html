@@ -2,20 +2,20 @@
 
 <div class="container">
 
-	<div id="col-1" class="column">
+	<div id="image-column" class="column">
+		<div class="image-layer">
+			<i ng-click="toggleFavorite()" class="show-heart heart fa fa-heart-o"></i>
+			<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">
+		</div>
+	</div>
+
+	<div id="thumb-column" class="column">
 		<div class="image-group">
 			<img class="product-thumbs repeat-animation" ng-repeat="image in productImages" ng-click="$parent.imgNum=$index" ng-src="{{image.source.small.url}}" alt="{{$index}}">
 		</div>
 	</div>
 
-	<div id="col-2" class="column">
-		<div class="image-layer">
-			<i ng-click="toggleFavorite()" class="show-heart heart fa fa-heart-o"></i>
-			<img class="product-hero" ng-init="imgNum=0"ng-src="{{productImages[imgNum].source.medium.url}}" alt="">	
-		</div>
-	</div>
-
-	<div id="col-3" class="column">
+	<div id="text-column" class="column">
 		<div class="product-text alt-font">
 			<p>{{product.style_num}}</p>
 			<p>{{product.description}}</p>
