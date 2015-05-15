@@ -3,7 +3,13 @@ module Api
     protect_from_forgery with: :null_session
 
     def index
-      products = Product.all
+      results = params[:results].to_i;
+      start = params[:start].to_i;
+      if results > 0
+        products = Product.limit(results).offset(start)
+      else
+        products = Product.all
+      end
       render json: products
       # if current_user
       #   favorites = current_user.favorites.includes(:product)
@@ -18,35 +24,6 @@ module Api
       # favorited_users = product.favorited_users
       render json: product
     end
-
-    # def create
-    #   product = Product.new(product_params)
-    #   if product.save
-    #     render json: product
-    #   else
-    #     render json: {errors: product.errors}, status: 422
-    #   end
-    # end
-
-    # def update
-    #   product = Product.find(params[:id])
-    #   if product.update(product_params)
-    #     render json: product
-    #   else
-    #     render json: {errors: product.errors}, status: 422
-    #   end
-    # end
-
-    # def destroy
-    #   product = Product.find(params[:id])
-    #   if product.destroy
-    #     render status: 200
-    #   else
-    #     render status: 400
-    #   end
-    # end
-
-
 
     private
 

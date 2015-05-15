@@ -1,15 +1,22 @@
 angular
 	.module("ootd")
-  .controller("showProductController", ['$rootScope', 'showProduct', '$scope', '$http', '$resource', '$stateParams', '$timeout', function($rootScope, showProduct, $scope, $http, $resource, $stateParams, $timeout){
+  .controller("showProductController", ['$rootScope', '$scope', '$http', '$resource', '$stateParams', '$timeout', function($rootScope, $scope, $http, $resource, $stateParams, $timeout){
 
+    var url = '/api/products/';
+    $http.get(url + $stateParams.id).success(function(object){
+      $scope.product = object.product;
+      $scope.productImages = $scope.product.images;
+      checkForFavorite();
+    });
 	  var Favorite = $resource('api/favorites/:id', {id:'@id'});
 	  var userFavorited;
 	  var currentUser = $rootScope.currentUser;
-	  $scope.product = showProduct;
+	  // $scope.product = showProduct;
 
-	  $timeout(function(){
-	  	$scope.productImages = showProduct.images;
-	  })
+
+	  // $timeout(function(){
+	  // 	$scope.productImages = $scope.product.images;
+	  // })
 
 
     // Called when the heart icon is clicked. 
@@ -73,7 +80,7 @@ angular
 	  }
 
 	  // Calls checkForFavorite when page loads to determine if heart icon should be filled
-	  checkForFavorite();
+	  // checkForFavorite();
 
 
 }]);

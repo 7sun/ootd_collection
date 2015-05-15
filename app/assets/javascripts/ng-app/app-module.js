@@ -1,5 +1,5 @@
 angular
-	.module("ootd", ['ngResource', 'templates', 'ui.router', 'ngAnimate'])
+	.module("ootd", ['ngResource', 'templates', 'ui.router', 'ngAnimate', 'infinite-scroll'])
 	.config(['$httpProvider', '$stateProvider' , '$urlRouterProvider', function($httpProvider, $stateProvider, $urlRouterProvider) {
       	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
           $('meta[name=csrf-token]').attr('content');
@@ -33,29 +33,29 @@ angular
         	.state("main.products", {
         		// url:"/products",
         		templateUrl: "products/products.html",
-        		controller: "productsController",
-                resolve: {
-                    allProducts: ['productsFactory', function(productsFactory) {
-                        return productsFactory.getAllProducts()
-                        .then(function(object){
-                            return object.data.products;
-                        })
-                    }]
-                }
+        		controller: "productsController"
+                // resolve: {
+                //     allProducts: ['productsFactory', function(productsFactory) {
+                //         return productsFactory.getAllProducts()
+                //         .then(function(object){
+                //             return object.data.products;
+                //         })
+                //     }]
+                // }
         	})
         	.state("main.showproduct", {
         		// url:"/products/:id",
         		templateUrl: "products/showproduct.html",
         		controller: "showProductController",
                 params: {id: null},
-                resolve: {
-                    showProduct: ['productsFactory', '$stateParams', function(productsFactory, $stateParams) {
-                        return productsFactory.getProduct($stateParams.id)
-                        .then(function(object){
-                            return object.data.product;
-                        })
-                    }]
-                }
+                // resolve: {
+                //     showProduct: ['productsFactory', '$stateParams', function(productsFactory, $stateParams) {
+                //         return productsFactory.getProduct($stateParams.id)
+                //         .then(function(object){
+                //             return object.data.product;
+                //         })
+                //     }]
+                // }
         	})
             .state("main.userfavorites", {
                 // url: "/favorites",

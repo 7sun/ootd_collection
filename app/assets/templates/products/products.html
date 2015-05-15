@@ -1,6 +1,6 @@
 <div class="sub-header">
 
-	<nav id="main-product-nav" class="product-nav">
+<!-- 	<nav id="main-product-nav" class="product-nav">
 		<ul>
 			<li ng-click="products = productsArray">all</li></a>
 			<li ng-click="products = topsArray">tops</li>
@@ -9,6 +9,18 @@
 			<li ng-click="products = dressesArray">dresses</li>
 			<li ng-click="products = jumpsuitsArray">jumpsuits</li>
 			<li ng-click="products = jacketsArray">jackets</li>	
+		</ul>
+	</nav> -->
+
+		<nav id="main-product-nav" class="product-nav">
+		<ul>
+			<li ng-click="category = ''">all</li></a>
+			<li ng-click="category = 'tops'">tops</li>
+			<li ng-click="category = 'pants'">pants</li>
+			<li ng-click="category = 'skirts'">skirts</li>
+			<li ng-click="category = 'dresses'">dresses</li>
+			<li ng-click="category = 'jumpsuits'">jumpsuits</li>
+			<li ng-click="category = 'jackets'">jackets</li>	
 		</ul>
 	</nav>
 
@@ -34,11 +46,11 @@
 
 <div class="container">
 
-	<section class="products">
-		<div class="product alt-font repeat-animation" ng-repeat="product in products" on-finish-render="ngRepeatFinished">
+	<section class="products" infinite-scroll="products.loadMore()" infinite-scroll-disabled='products.busy' infinite-scroll-distance="2">
+		<div class="product alt-font repeat-animation" ng-repeat="product in products.products | filter:category" on-finish-render="ngRepeatFinished">
 			<a ui-sref="main.showproduct({id: product.id })"><img ng-src="{{product.images[0].source.small.url}}" alt="product-image"></a>
 			<a ui-sref="main.showproduct({id: product.id })"><p>{{product.style_num}} </a>
-			<i ng-click="toggleFavorite($index, product.id)" id="heart-{{$index}}" class="fa fa-heart-o"></i></p>
+			<i ng-click="toggleFavorite(product.id)" id="heart-{{product.id}}" class="fa fa-heart-o"></i></p>
 		</div>
 	</section>
 
