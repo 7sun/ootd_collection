@@ -10,7 +10,7 @@ angular
 		}
 
 		products.getAllProducts = function(){
-			return $http.get(url);
+			return $http({method: "get", url: url, cache: true});
 		}
 		
 		return products;

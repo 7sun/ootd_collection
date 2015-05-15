@@ -72,6 +72,7 @@ angular
       }
 
       $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+        console.log("checked for favorites on load");
         checkForFavorite();
       });
 
