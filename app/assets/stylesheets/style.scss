@@ -413,6 +413,7 @@ nav {
 
 #text-column {
 	height: 600px;
+	width: 240px;
 	display: table;
 	float: right;
 }
@@ -545,6 +546,7 @@ nav {
 
 	#text-column {
 		float: none;
+		width: initial;
 		display: inline;
 	}
 
