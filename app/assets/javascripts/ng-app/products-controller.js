@@ -12,6 +12,7 @@ angular
         $scope.pantsArray = filterFilter($scope.products, 'pants');
         $scope.skirtsArray = filterFilter($scope.products, 'skirt');
         $scope.dressesArray = filterFilter($scope.products, 'dresses');
+        $scope.jumpsuitsArray = filterFilter($scope.products, 'jumpsuits');
         $scope.jacketsArray = filterFilter($scope.products, 'jackets');
       })
 			
