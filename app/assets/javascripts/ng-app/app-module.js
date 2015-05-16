@@ -73,7 +73,7 @@ angular
         $state.go('home');
     }])
 
-    .directive('onFinishRender', function($timeout){
+    .directive('onFinishRender', ['$timeout', function($timeout){
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
@@ -84,9 +84,9 @@ angular
                 }
             }
         }
-    })
+    }])
 
-    .directive('routeLoadingIndicator', function($rootScope){
+    .directive('routeLoadingIndicator', ['$rootScope', function($rootScope){
       return {
         restrict: 'E',
         template: "<div class='spinner'><h1 ng-if='isRouteLoading'><i class='fa fa-spinner fa-spin'></i></h1></div>",
@@ -102,6 +102,6 @@ angular
           });
         }
       };
-    });
+    }]);
 
     
