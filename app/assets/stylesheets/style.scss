@@ -459,6 +459,12 @@ nav {
 	margin-top: 1em;
 }
 
+.spinner {
+	z-index: $top-level;
+	position: absolute;
+	width: 1000px;
+}
+
 /*LOOKBOOK******************************************************************************/
 
 #lookbook-container {

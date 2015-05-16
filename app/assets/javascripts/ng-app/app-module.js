@@ -89,7 +89,7 @@ angular
     .directive('routeLoadingIndicator', function($rootScope){
       return {
         restrict:'E',
-        template:"<h1 ng-if='isRouteLoading'>Loading...<i class='fa fa-spinner fa-spin'></i></h1>",
+        template:"<div class='spinner'><h1 ng-if='isRouteLoading'>Loading...<i class='fa fa-spinner fa-spin'></i></h1></div>",
         link:function(scope, elem, attrs){
           scope.isRouteLoading = false;
 

@@ -27,6 +27,10 @@
 		</svg>
 	</div>
 
+
+	<route-loading-indicator></route-loading-indicator>
+	<div class="spinner" ng-if='!isRouteLoading' ng-view></div>
+
 	<div class="login" ui-view></div>
 
 
