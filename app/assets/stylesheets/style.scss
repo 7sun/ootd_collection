@@ -626,7 +626,6 @@ nav {
 	}
 
 	#logo-main {
-		// float: left;
 		width: 140px;
 		margin-top: 5px;
 	}
@@ -652,6 +651,10 @@ nav {
 	}
 
 	#main-product-nav {
+		display: none;
+	}
+
+	#hero-video {
 		display: none;
 	}
 
@@ -721,10 +724,6 @@ nav {
 		}
 	}
 
-	#hero-video {
-		display: none;
-	}
-
 	#logo-landing {
 		margin-top: 10vh;
 	}
@@ -740,6 +739,10 @@ nav {
 		.social-group {
 			display: none;
 		}
+	}
+
+	#landing-form-container {
+		margin-bottom: 40em;
 	}
 
 

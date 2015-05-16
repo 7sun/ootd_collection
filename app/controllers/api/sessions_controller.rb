@@ -6,8 +6,10 @@ module Api
       if user && user.authenticate(params[:user][:password])
         session[:user_id] = user.id
         render json: user, only: [:id, :email]  
+      elsif user
+        render json: {error: "Your password is incorrect"}
       else
-        render json: {error: "Username or password is incorrect"}
+        render json: {error: "Your email is not registered. Contact info@ootdcollection.com to request an account"}
       end
     end
 

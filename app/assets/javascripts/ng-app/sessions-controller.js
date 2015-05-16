@@ -12,7 +12,7 @@ angular
   	$scope.login = function() {
   	  $http.post('/api/login', {user: {email: $scope.email, password: $scope.password}}).success(function(data){
   	    if(data.error) {
-  	      // $('.error-flash').addClass('alert alert-danger').html('<span class="glyphicon glyphicon-exclamation-sign"></span> ' + data.error);
+  	      $('.error-flash').addClass('flash-error').html('<span><i class="fa fa-exclamation-circle"></i></span> ' + data.error);
   	      console.log("incorrect login info");
   	    } else {
   	      $http.get('/api/currentuser').success(function(data){
