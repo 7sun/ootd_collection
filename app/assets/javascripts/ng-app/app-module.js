@@ -88,16 +88,16 @@ angular
 
     .directive('routeLoadingIndicator', function($rootScope){
       return {
-        restrict:'E',
-        template:"<div class='spinner'><h1 ng-if='isRouteLoading'>Loading...<i class='fa fa-spinner fa-spin'></i></h1></div>",
-        link:function(scope, elem, attrs){
+        restrict: 'E',
+        template: "<div class='spinner'><h1 ng-if='isRouteLoading'><i class='fa fa-spinner fa-spin'></i></h1></div>",
+        link: function(scope, elem, attrs){
           scope.isRouteLoading = false;
 
-          $rootScope.$on('$routeChangeStart', function(){
+          $rootScope.$on('$stateChangeStart', function(){
             scope.isRouteLoading = true;
           });
 
-          $rootScope.$on('$routeChangeSuccess', function(){
+          $rootScope.$on('$stateChangeSuccess', function(){
             scope.isRouteLoading = false;
           });
         }

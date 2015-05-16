@@ -460,9 +460,16 @@ nav {
 }
 
 .spinner {
-	z-index: $top-level;
-	position: absolute;
-	width: 1000px;
+	z-index: 99999999999999999999;
+	font-size: 2em;
+	width: 200px;
+	height: 100px;
+	color: $base-color;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -100px;
 }
 
 /*LOOKBOOK******************************************************************************/
