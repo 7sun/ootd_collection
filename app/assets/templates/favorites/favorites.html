@@ -7,6 +7,12 @@
 			<img ng-src="{{fav.images[0].source.small.url}}" alt="">
 			<p>{{fav.style_num}}</p>
 		</div>
+    <div ng-show="favProducts.length == 0" class="faves-notice">
+      <h3>Oh my! You don't have any favorites yet.</h3>
+      <p>Tap the heart on your favorite products to add them here.</p>
+      <br><br>
+      <a ui-sref="main.products">Browse the Collection</a>
+    </div>
 	</section>
 </div>
 
