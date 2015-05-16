@@ -459,6 +459,34 @@ nav {
 	margin-top: 1em;
 }
 
+/*LOOKBOOK******************************************************************************/
+
+#lookbook-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.lookbook-img {
+	margin-bottom: 20px;
+	margin-bottom: 4%;
+}
+
+.full {
+	width: 100%;
+	display: block;
+}
+
+.double-width {
+	width: 48%;
+	&:nth-child(odd){
+		float: left;
+	}
+	&:nth-child(even){
+		float: right;
+	}
+}
+
+
 /*ADMIN PAGES******************************************************************************/
 
 #admin-header {
