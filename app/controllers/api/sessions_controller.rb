@@ -9,7 +9,7 @@ module Api
       elsif user
         render json: {error: "Your password is incorrect"}
       else
-        render json: {error: "Your email is not registered. Contact info@ootdcollection.com to request an account"}
+        render json: {error: "Your email is incorrect or has not been registered. Contact info@ootdcollection.com to request an account"}
       end
     end
 

@@ -148,6 +148,7 @@ a {
 .fa-bars {
 	font-size: 1.8em;
 	margin-top: 0.5em;
+	margin-right: 2vw;
 }
 
 .active {
@@ -619,6 +620,10 @@ nav {
 	// Change to menu icon format
 	html {
 		font-size: 18px;
+	}
+
+	header {
+		width: 100%;
 	}
 
 	.header-container {
