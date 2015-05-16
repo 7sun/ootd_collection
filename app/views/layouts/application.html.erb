@@ -10,6 +10,10 @@
 	  <!-- <meta name="viewport" content="maximum-scale=1"> -->
 	</head>
 	<body>
+
+		<route-loading-indicator></route-loading-indicator>
+		<div ng-if='!isRouteLoading' ng-view></div>
+
 		<%= yield %>
 	</body>
 </html>
