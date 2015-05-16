@@ -94,11 +94,13 @@ angular
           scope.isRouteLoading = false;
 
           $rootScope.$on('$stateChangeStart', function(){
+            $('.spinner').removeClass('hide');
             scope.isRouteLoading = true;
           });
 
           $rootScope.$on('$stateChangeSuccess', function(){
             scope.isRouteLoading = false;
+            $('.spinner').addClass('hide');
           });
         }
       };
