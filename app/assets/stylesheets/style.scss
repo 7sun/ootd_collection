@@ -4,7 +4,7 @@ $base-color: #FDFDFD;
 $base-font-color: #635959;
 $black: #010101;
 $grey: #C4B3BC;
-$dark-grey: #635959;
+$dark-grey: #6c5360;
 $top-level: 999999;
 $high-level: 99999;
 $mid-level: 9999;
@@ -132,7 +132,7 @@ a {
 	color: $grey;
 	text-decoration: none;
 	&:hover {
-		color: $base-font-color;
+		color: $dark-grey;
 		cursor: pointer;
 	}
 }
@@ -152,7 +152,7 @@ a {
 }
 
 .active {
-	color: $base-font-color;
+	color: $dark-grey;
 }
 
 .alt-font {
