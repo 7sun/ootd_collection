@@ -72,7 +72,6 @@
 	$(function(){
 		console.log("loads main script for menu");
 		var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
-		var navLink = $('.nav-link').unbind();
 		$('#js-centered-navigation-menu').removeClass("show");
 		
 		menuToggle.on('click', function(e) {
@@ -85,18 +84,29 @@
 		  });
 		});
 
-		// navLink.on('click', function(e) {
-		//   e.preventDefault();
-		//   console.log("menu clicked");
-		//   $('.centered-navigation-menu').slideToggle(function(){
-		//     if($('.centered-navigation-menu').is(':hidden')) {
-		//       $('.centered-navigation-menu').removeAttr('style');
-		//     }
-		//   });
-		// });
+    // run test on initial page load
+    checkSize();
 
+    // run test on resize of the window
+    $(window).resize(checkSize);
 
-
+    //Function to the css rule
+    function checkSize(){
+      if ($("html").css("font-size") == "18px" ){
+          var navLink = $('.nav-link').unbind();
+          navLink.on('click', function(e) {
+            e.preventDefault();
+            $('.centered-navigation-menu').slideToggle(function(){
+              if($('.centered-navigation-menu').is(':hidden')) {
+                $('.centered-navigation-menu').removeAttr('style');
+              }
+            });
+          });
+      }
+      else {
+        $('.nav-link').unbind();
+      }
+    }
 	})
 
 </script>
