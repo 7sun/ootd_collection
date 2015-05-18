@@ -145,6 +145,10 @@ a {
 	font-size: 0.5em;
 }
 
+ .fa-spinner {
+	text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+ }
+
 .fa-bars {
 	font-size: 1.8em;
 	margin-top: 0.5em;
@@ -391,10 +395,6 @@ nav {
 
 /*PRODUCT SHOW******************************************************************************/
 
-.image-layer {
-	position: relative;
-}
-
 #image-column {
 	position: absolute;
   right: 50%;
@@ -419,6 +419,7 @@ nav {
 
 .image-group {
 	float: right;
+	position: relative;
 }
 
 .product-text {
@@ -430,6 +431,7 @@ nav {
 	height: 190px;
 	margin-bottom: 0.938em;
 	display: block;
+	cursor: pointer;
 	&:last-child {
 		margin-bottom: 0;
 	}
