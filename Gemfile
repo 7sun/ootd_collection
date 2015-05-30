@@ -42,6 +42,8 @@ gem 'httparty'
 gem 'bourbon'
 # neat grids
 gem 'neat'
+#Sets puma as the server
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
