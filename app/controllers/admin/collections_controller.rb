@@ -1,6 +1,7 @@
 module Admin
   class CollectionsController < ApplicationController
-
+    before_action :require_admin
+    
     def index
       @collections = Collection.all
     end
